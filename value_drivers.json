@@ -10,7 +10,322 @@
       "Streamlining project execution processes in Dotwork to minimize time spent on addressing risks, resulting in a 3-week decrease in time-to-market for new products, and allowing teams to focus more on innovation and meeting market demands.",
       "Enhancing data visibility through Dotwork’s graph-native architecture to consolidate scattered information, which can reduce overall project costs by 20%, and improve decision-making by providing a clear context for risk identification across teams."
     ],
-    "description": "The ability to identify areas of risk and friction earlier. This allows teams to take proactive measures when issues are easier and less costly to address. By addressing potential problems ahead of time, organizations can improve efficiency and reduce overall expenses."
+    "description": "The ability to identify areas of risk and friction earlier. This allows teams to take proactive measures when issues are easier and less costly to address. By addressing potential problems ahead of time, organizations can improve efficiency and reduce overall expenses.",
+    "question_1": "Can you share a specific instance where a delay in identifying a risk or friction point led to significant costs or operational challenges for your team, and what could have been done differently to address it earlier?",
+    "question_2": "What steps have you taken to identify areas of risk and friction earlier in your work, and in reflecting on those experiences, what approaches have proven effective for you, and which ones have posed challenges?",
+    "question_3": "How urgent do you feel it is for your organization to identify areas of risk and friction earlier, and what level of commitment do you see from leadership and teams to take proactive measures in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "We identify potential issues before they escalate into crises.",
+        "Our teams address risks proactively, saving us time and money.",
+        "We can pivot quickly because we spot friction early.",
+        "The quality of our deliverables has improved significantly.",
+        "We feel more confident in our decision-making with early risk insights."
+      ],
+      "struggling": [
+        "We often miss risks until they become expensive problems.",
+        "It's frustrating when we realize issues too late to fix them.",
+        "Our teams are constantly reacting rather than being proactive.",
+        "It feels like we are always in damage control mode.",
+        "We waste resources fixing problems instead of preventing them."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 3,
+        "5": 3,
+        "6": 3,
+        "7": 5,
+        "8": 2,
+        "9": 3,
+        "10": 2,
+        "11": 2,
+        "12": 2,
+        "13": 3,
+        "14": 4,
+        "15": 3,
+        "16": 3,
+        "17": 5,
+        "18": 3,
+        "19": 4,
+        "20": 3,
+        "21": 2,
+        "22": 2,
+        "23": 5,
+        "24": 4,
+        "25": 2,
+        "26": 1,
+        "27": 1,
+        "28": 3,
+        "29": 2,
+        "30": 1
+      }
+    },
+    "roi_assessment_technique": {
+      "sections": [
+        {
+          "section": "revenue_increase_opportunities",
+          "title": "Revenue Increase Opportunities",
+          "description": "Opportunities in this value area can enhance revenue by improving customer interactions and enabling faster responses to market demands. Identifying risks early allows for timely adjustments that can attract new customers and retain existing ones.",
+          "items": [
+            {
+              "mechanism": "Proactive Customer Engagement",
+              "description": "Identifying areas of risk allows the company to engage with customers proactively, addressing issues before they escalate. This leads to improved customer satisfaction and higher sales conversion rates.",
+              "measurement_approach": "Track engagement metrics such as Net Promoter Score (NPS) and conversion rates before and after implementing early risk identification strategies.",
+              "example": "By addressing potential delays in order fulfillment identified early, the company increased customer satisfaction scores and drove a 15% increase in repeat purchases."
+            },
+            {
+              "mechanism": "Enhanced Product Development Cycles",
+              "description": "Early identification of friction points in product development enables quicker iterations and faster time-to-market for new features, directly impacting revenue through timely product launches.",
+              "measurement_approach": "Measure the reduction in time-to-market for new features as well as the revenue generated from those features post-launch.",
+              "example": "By resolving bottlenecks identified early in the development process, the company launched a new app feature three months ahead of schedule, generating $500,000 in additional revenue."
+            },
+            {
+              "mechanism": "Market Responsiveness",
+              "description": "Identifying risks in consumer trends or market movements allows the company to pivot its strategies quickly, capturing new market opportunities before competitors.",
+              "measurement_approach": "Analyze sales data and market trends to assess the correlation between identified risks and subsequent revenue increases in new market segments.",
+              "example": "After identifying a shift in consumer preferences towards eco-friendly products, the company quickly introduced a new product line and captured an additional 10% market share."
+            },
+            {
+              "mechanism": "Customized Pricing Strategies",
+              "description": "By understanding potential risks in customer sentiment and competitor actions, the company can refine pricing strategies, enhancing perceived value and driving revenue.",
+              "measurement_approach": "Evaluate changes in customer purchase behavior and revenue impact following adjustments to pricing based on early risk assessments.",
+              "example": "The company implemented a dynamic pricing strategy that responded to identified competitive threats, resulting in a 12% increase in sales during peak seasons."
+            },
+            {
+              "mechanism": "Improved Customer Experience",
+              "description": "Early identification of friction points in the customer journey allows the company to enhance user experience, leading to increased customer loyalty and higher sales.",
+              "measurement_approach": "Monitor customer satisfaction and retention rates before and after implementing changes based on identified risks.",
+              "example": "By streamlining the checkout process after identifying customer drop-off points, the company reduced cart abandonment rates by 20%, boosting overall revenue."
+            }
+          ]
+        },
+        {
+          "section": "revenue_protection_mechanisms",
+          "title": "Revenue Protection Mechanisms",
+          "description": "Focusing on risk identification helps safeguard existing revenue streams by enhancing customer retention and minimizing churn. By proactively addressing potential issues, the company can maintain its customer base and market position.",
+          "items": [
+            {
+              "mechanism": "Customer Churn Reduction",
+              "description": "Identifying at-risk customers early allows for targeted retention strategies, reducing churn and protecting revenue.",
+              "measurement_approach": "Calculate churn rates before and after implementing risk identification strategies and track the effectiveness of retention initiatives.",
+              "example": "After identifying a segment of customers at risk of leaving, targeted outreach reduced churn by 25%, preserving an estimated $1 million in annual revenue."
+            },
+            {
+              "mechanism": "Strengthened Customer Relationships",
+              "description": "Proactive risk assessment helps in nurturing customer relationships, leading to greater loyalty and repeat business.",
+              "measurement_approach": "Monitor repeat purchase rates and customer lifetime value (CLV) following risk mitigation actions.",
+              "example": "By proactively addressing service issues for key accounts, the company increased customer retention by 30%, securing long-term revenue commitments."
+            },
+            {
+              "mechanism": "Competitive Advantage Maintenance",
+              "description": "Regularly identifying risks related to competitors allows the company to adjust strategies, maintaining its market position and revenue.",
+              "measurement_approach": "Assess market share and competitive positioning metrics before and after implementing risk-driven strategies.",
+              "example": "By rapidly responding to a competitor's pricing strategy identified through risk analysis, the company maintained its market share and avoided a potential revenue decline."
+            },
+            {
+              "mechanism": "Contract Renewal Improvements",
+              "description": "Identifying risks in customer satisfaction or service delivery can lead to better contract renewal rates, thereby protecting revenue.",
+              "measurement_approach": "Analyze renewal rates and customer feedback before and after implementing risk management initiatives.",
+              "example": "After identifying service delivery risks for a major client, proactive communication and support led to a 95% contract renewal rate, safeguarding $2 million in revenue."
+            },
+            {
+              "mechanism": "Market Share Protection",
+              "description": "By anticipating market risks, the company can take actions that prevent loss of market share and associated revenue.",
+              "measurement_approach": "Track market share metrics and correlate with actions taken based on identified risks.",
+              "example": "The company maintained its leading market share during an economic downturn by swiftly addressing identified risks, resulting in stable revenue streams."
+            }
+          ]
+        },
+        {
+          "section": "cost_decrease_opportunities",
+          "title": "Cost Decrease Opportunities",
+          "description": "Identifying areas of risk allows for the optimization of resources and processes, leading to substantial cost savings. By addressing inefficiencies early, the company can streamline operations and reduce unnecessary expenditures.",
+          "items": [
+            {
+              "mechanism": "Operational Efficiency Gains",
+              "description": "Early risk identification allows for streamlining operations, resulting in reduced operational costs.",
+              "measurement_approach": "Measure changes in operational costs pre- and post-implementation of risk management strategies.",
+              "example": "By identifying redundancies in the supply chain, the company reduced logistics costs by 15%, saving $300,000 annually."
+            },
+            {
+              "mechanism": "Resource Optimization",
+              "description": "Identifying potential risks in resource allocation can lead to more effective use of personnel and materials, reducing overall costs.",
+              "measurement_approach": "Analyze resource utilization metrics before and after risk assessments and adjustments.",
+              "example": "After identifying underutilized resources in development teams, the company optimized staffing, resulting in a 20% reduction in labor costs."
+            },
+            {
+              "mechanism": "Process Automation",
+              "description": "Early identification of risk areas in manual processes leads to automation opportunities, significantly reducing costs.",
+              "measurement_approach": "Evaluate the cost savings from automation initiatives compared to manual processes.",
+              "example": "By automating inventory management after identifying inefficiencies, the company saved $100,000 annually in labor costs."
+            },
+            {
+              "mechanism": "Waste Elimination",
+              "description": "Identifying risks related to waste can lead to improved efficiency and reduced costs across operations.",
+              "measurement_approach": "Measure waste reduction and its corresponding cost savings before and after implementing risk management strategies.",
+              "example": "By addressing waste in packaging processes, the company achieved a 10% reduction in material costs, equating to savings of $150,000."
+            },
+            {
+              "mechanism": "Cycle Time Reduction",
+              "description": "Identifying risks that extend cycle times allows for process improvements, leading to cost savings.",
+              "measurement_approach": "Analyze cycle time metrics and correlate reductions with cost savings post-implementation of risk mitigation strategies.",
+              "example": "By addressing delays in the product return process, the company reduced cycle times by 30%, resulting in a $200,000 annual cost saving."
+            }
+          ]
+        },
+        {
+          "section": "cost_protection_mechanisms",
+          "title": "Cost Protection Mechanisms",
+          "description": "Effective risk identification can prevent future costs from arising, safeguarding the company against unforeseen expenses. By mitigating risks early, the company can avoid significant financial impacts.",
+          "items": [
+            {
+              "mechanism": "Risk Mitigation Strategies",
+              "description": "Identifying risks early enables the company to implement strategies that avoid future costs associated with failures.",
+              "measurement_approach": "Calculate cost avoidance based on the implementation of risk mitigation strategies.",
+              "example": "By identifying and addressing potential supply chain disruptions early, the company avoided a $500,000 cost associated with production delays."
+            },
+            {
+              "mechanism": "Technical Debt Prevention",
+              "description": "Preventing technical debt through early identification of risks in software development saves future costs related to system fixes and maintenance.",
+              "measurement_approach": "Assess the reduction in maintenance costs and system failures after implementing proactive risk measures.",
+              "example": "By addressing coding inefficiencies early, the company reduced technical debt, saving $250,000 in future maintenance costs."
+            },
+            {
+              "mechanism": "Compliance Cost Avoidance",
+              "description": "Early risk identification helps ensure compliance with regulations, preventing costly fines and penalties.",
+              "measurement_approach": "Track the incidence of compliance-related costs before and after risk assessments and mitigation strategies.",
+              "example": "By identifying potential compliance risks early, the company avoided a $1 million fine related to regulatory non-compliance."
+            },
+            {
+              "mechanism": "Avoided Penalties or Fines",
+              "description": "Proactively identifying risks associated with contractual obligations can prevent costly penalties.",
+              "measurement_approach": "Monitor penalty costs incurred before and after risk management implementations.",
+              "example": "By identifying contractual risks in supplier agreements, the company avoided $200,000 in penalties for non-compliance."
+            },
+            {
+              "mechanism": "Prevented Rework or Remediation Costs",
+              "description": "Identifying risks in product quality early can reduce costs associated with rework and customer complaints.",
+              "measurement_approach": "Measure remediation costs related to quality issues before and after implementing risk identification practices.",
+              "example": "By addressing quality control risks early, the company reduced rework costs by 40%, amounting to $300,000 in savings."
+            }
+          ]
+        },
+        {
+          "section": "near_term_effects",
+          "title": "Near-Term Effects (0-6 months)",
+          "description": "In the short term, implementing risk identification strategies can yield measurable improvements in key performance metrics. Establishing baselines and tracking specific metrics allows the company to quantify immediate impacts.",
+          "items": [
+            {
+              "metric": "Churn Rate",
+              "description": "Measures the percentage of customers lost over a specific period. Lower churn indicates better customer retention and satisfaction.",
+              "measurement_methodology": "Calculate the churn rate by dividing the number of customers lost by the total number of customers at the start of the period.",
+              "expected_magnitude": "Target a reduction of 10-15% in churn rate within the first 6 months.",
+              "example": "After implementing early risk identification strategies, the company reduced its churn rate from 18% to 12% in six months."
+            },
+            {
+              "metric": "Time-to-Market for New Features",
+              "description": "Tracks the average time taken to develop and launch new product features. Shorter times indicate improved operational efficiency.",
+              "measurement_methodology": "Measure the time from feature conception to launch, comparing periods before and after risk identification strategies.",
+              "expected_magnitude": "Aim for a 20% reduction in time-to-market within the first 6 months.",
+              "example": "By addressing bottlenecks early, the company reduced its time-to-market for new features from 6 months to 4.5 months."
+            },
+            {
+              "metric": "Operational Cost Savings",
+              "description": "Tracks the reduction in operational costs due to efficiency gains from risk identification efforts.",
+              "measurement_methodology": "Calculate total operational costs before and after implementing risk management strategies.",
+              "expected_magnitude": "Expect to see savings of $200,000 to $300,000 within the first 6 months.",
+              "example": "The company achieved $250,000 in operational cost savings within the first 6 months through early risk identification."
+            },
+            {
+              "metric": "Customer Satisfaction Score (CSAT)",
+              "description": "Measures customer satisfaction based on feedback surveys. Higher scores indicate better customer experiences.",
+              "measurement_methodology": "Conduct regular customer satisfaction surveys and analyze the average score.",
+              "expected_magnitude": "Aim for a 15% increase in CSAT within the first 6 months.",
+              "example": "Following improvements based on early risk identification, the company saw its CSAT score rise from 75% to 87%."
+            },
+            {
+              "metric": "Repeat Purchase Rate",
+              "description": "Tracks the percentage of customers who make repeat purchases within a specific timeframe. Higher rates indicate customer loyalty.",
+              "measurement_methodology": "Calculate the percentage of customers who made multiple purchases within the last year.",
+              "expected_magnitude": "Target an increase of 10-12% in repeat purchase rates in the first 6 months.",
+              "example": "The company increased its repeat purchase rate from 30% to 35% by addressing customer concerns identified early."
+            }
+          ]
+        },
+        {
+          "section": "second_order_effects",
+          "title": "Second-Order Effects (6-18 months)",
+          "description": "In the medium term, pursuing opportunities in this value area can lead to indirect benefits that enhance overall organizational performance. These cascading effects can amplify initial improvements and create a more resilient business.",
+          "items": [
+            {
+              "effect": "Cascading Benefits",
+              "description": "Improvements in one area can lead to positive outcomes in others, creating a ripple effect throughout the organization.",
+              "measurement_approach": "Monitor cross-functional performance metrics to assess interdependencies and cascading impacts.",
+              "example": "After improving customer service response times, the company saw increased sales as satisfied customers shared positive experiences, boosting overall revenue."
+            },
+            {
+              "effect": "Multiplier Effects",
+              "description": "Initial cost savings and efficiency gains can lead to further investments in innovation and growth, generating additional returns.",
+              "measurement_approach": "Analyze reinvestment rates and correlate them with growth metrics following initial improvements.",
+              "example": "The company reinvested savings from operational efficiencies into new product development, resulting in a 25% increase in new revenue streams."
+            },
+            {
+              "effect": "Compound Improvements",
+              "description": "Sustained focus on risk identification can lead to ongoing enhancements in team performance and customer satisfaction.",
+              "measurement_approach": "Track improvements in team performance metrics and customer feedback over time to evaluate compounded growth.",
+              "example": "Continuous risk assessment led to a culture of proactive problem-solving, resulting in a 30% improvement in overall team productivity."
+            },
+            {
+              "effect": "Systemic Changes",
+              "description": "Adopting a risk identification mindset can transform organizational culture, fostering innovation and responsiveness.",
+              "measurement_approach": "Conduct culture assessments and employee surveys to gauge shifts in mindset and behavior.",
+              "example": "The company experienced a cultural shift towards risk awareness, leading to a 40% increase in employee engagement scores."
+            },
+            {
+              "effect": "Increased Stakeholder Confidence",
+              "description": "Proactive risk management enhances stakeholder trust and confidence in the organization, leading to potential investment opportunities.",
+              "measurement_approach": "Evaluate stakeholder feedback and investment metrics pre- and post-implementation of risk management strategies.",
+              "example": "Investor confidence grew as the company showcased its proactive risk management approach, leading to a successful $10 million funding round."
+            }
+          ]
+        },
+        {
+          "section": "third_order_effects",
+          "title": "Third-Order Effects (18+ months)",
+          "description": "Long-term impacts of pursuing opportunities in this value area can fundamentally reshape the organization’s capabilities and market positioning. These transformative changes can establish a competitive edge and enhance overall resilience.",
+          "items": [
+            {
+              "effect": "Organizational Capability Building",
+              "description": "Continued focus on risk identification develops internal capabilities that enhance overall business resilience and adaptability.",
+              "measurement_approach": "Assess training and development metrics along with overall organizational performance improvements.",
+              "example": "The company built a robust risk management training program, resulting in a 50% increase in project success rates over time."
+            },
+            {
+              "effect": "Cultural Shifts",
+              "description": "A proactive approach to risk management can foster a culture of innovation, collaboration, and continuous improvement throughout the organization.",
+              "measurement_approach": "Conduct regular employee engagement surveys to measure shifts in organizational culture and collaboration.",
+              "example": "With a newfound focus on risk management, the company saw a 60% increase in employee collaboration on cross-functional projects."
+            },
+            {
+              "effect": "Strategic Positioning Improvements",
+              "description": "Long-term risk management can enhance the company’s strategic positioning in the market, leading to competitive advantages.",
+              "measurement_approach": "Analyze market positioning metrics and strategic performance indicators over time.",
+              "example": "The company’s commitment to risk management solidified its reputation as a market leader in customer service excellence."
+            },
+            {
+              "effect": "Market Transformation Impacts",
+              "description": "By effectively managing risk, the company can influence industry standards and practices, driving overall market improvements.",
+              "measurement_approach": "Monitor industry benchmarks and market trends to assess the company’s influence on market transformations.",
+              "example": "The company’s proactive risk management initiatives set new standards in retail operations, encouraging competitors to adopt similar practices."
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "id": 2,
@@ -23,7 +338,60 @@
       "Real-time visibility into downstream impacts of changes resulting in a 50% decrease in development time spent on debugging issues, and improving overall team morale by reducing frustration linked to unresolved dependencies.",
       "Prioritized dependency untangling initiatives within Dotwork resulting in a 20% increase in project delivery speed, and enhancing agility across teams by allowing them to innovate without the burden of legacy dependency issues."
     ],
-    "description": "The ability to surface and quantify dependencies within projects and processes. This helps teams recognize potential issues early, allowing for proactive management rather than reactive fixes. By reducing the cost of these dependencies, organizations can enhance efficiency and improve overall project delivery."
+    "description": "The ability to surface and quantify dependencies within projects and processes. This helps teams recognize potential issues early, allowing for proactive management rather than reactive fixes. By reducing the cost of these dependencies, organizations can enhance efficiency and improve overall project delivery.",
+    "question_1": "Can you share an instance when a hidden dependency in a project led to significant delays or increased costs, and how you think having better visibility into those dependencies could have changed the outcome?",
+    "question_2": "What specific strategies have you been exploring to surface and quantify dependencies in your projects, and as you reflect on your experiences, what aspects have you found to be effective versus those that have presented challenges?",
+    "question_3": "How critical do you believe it is for your organization to surface and quantify dependencies within your projects right now, and what level of commitment do you see from leadership and teams to actively prioritize and address these dependencies?",
+    "performance_signals": {
+      "high_performing": [
+        "We always know the dependencies before starting a new effort.",
+        "It's clear when things are at risk, allowing us to act quickly.",
+        "We can easily adjust timelines based on known dependencies.",
+        "Our teams communicate openly about potential impacts on deliverables.",
+        "Prioritizing dependencies has significantly reduced our costs."
+      ],
+      "struggling": [
+        "I often find out about dependencies too late in the game.",
+        "We scramble to fix issues that could have been avoided.",
+        "There's a lot of confusion about how efforts are linked.",
+        "Our costs keep rising because we can’t manage dependencies well.",
+        "We frequently miss deadlines due to unexpected complications."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 4,
+        "5": 4,
+        "6": 3,
+        "7": 4,
+        "8": 3,
+        "9": 3,
+        "10": 2,
+        "11": 3,
+        "12": 2,
+        "13": 3,
+        "14": 4,
+        "15": 2,
+        "16": 2,
+        "17": 3,
+        "18": 4,
+        "19": 5,
+        "20": 3,
+        "21": 2,
+        "22": 2,
+        "23": 4,
+        "24": 3,
+        "25": 3,
+        "26": 2,
+        "27": 2,
+        "28": 4,
+        "29": 2,
+        "30": 2
+      }
+    }
   },
   {
     "id": 3,
@@ -36,7 +404,60 @@
       "Improved cross-departmental collaboration tools reducing duplicated efforts by 25%, and creating a culture of synergy that drives innovation and project success.",
       "Comprehensive investment tracking within Dotwork resulting in a 15% increase in ROI on capital expenditures, and providing teams with clear insights that enhance motivation and operational effectiveness."
     ],
-    "description": "The ability to connect investments to their returns effectively. This allows organizations to make informed decisions about how to allocate resources for maximum impact. By continuously adjusting capital, capacity, or capability, businesses can enhance their overall performance and drive growth."
+    "description": "The ability to connect investments to their returns effectively. This allows organizations to make informed decisions about how to allocate resources for maximum impact. By continuously adjusting capital, capacity, or capability, businesses can enhance their overall performance and drive growth.",
+    "question_1": "Can you share a specific instance where a misalignment between your investments and the returns led to unexpected costs or missed opportunities, and how that impacted your decision-making or resource allocation?",
+    "question_2": "In your journey to close the loop between investment and return, what specific strategies have you been trying to implement, and how have they performed in terms of delivering impact? What successes have you encountered, and where have you faced challenges that might reveal patterns in your approach?",
+    "question_3": "How critical do you feel it is for your organization to close the loop between investment and return at this moment, and what level of commitment do you observe from your leadership and teams to make the necessary adjustments in capital, capacity, or capability to enhance impact?",
+    "performance_signals": {
+      "high_performing": [
+        "We can easily track how our investments are paying off.",
+        "Our capacity adjustments lead to noticeable improvements in efficiency.",
+        "Every dollar spent feels like it's making a real impact.",
+        "We quickly pivot our resources based on what’s working.",
+        "Our team feels empowered to make informed decisions on funding."
+      ],
+      "struggling": [
+        "We're often unsure if our spending is actually delivering value.",
+        "It feels like we're throwing money at issues without clear results.",
+        "We make changes, but they rarely lead to better outcomes.",
+        "Our resources are misaligned and it shows in our performance.",
+        "We react to problems instead of proactively managing our investments."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 3,
+        "2": 4,
+        "3": 4,
+        "4": 3,
+        "5": 5,
+        "6": 4,
+        "7": 3,
+        "8": 3,
+        "9": 5,
+        "10": 3,
+        "11": 4,
+        "12": 3,
+        "13": 5,
+        "14": 5,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "18": 3,
+        "19": 3,
+        "20": 2,
+        "21": 2,
+        "22": 1,
+        "23": 2,
+        "24": 4,
+        "25": 2,
+        "26": 1,
+        "27": 1,
+        "28": 3,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 4,
@@ -49,7 +470,60 @@
       "Established automated alerts for inventory levels based on real-time data resulting in a 20% decrease in stockout incidents, and enhancing the brand's reputation by ensuring reliable product availability during marketing campaigns.",
       "Deployed AI-driven insights for market trend analysis resulting in a 40% improvement in proactive decision-making, and enabling teams to stay ahead of competitors by swiftly adapting to changing consumer preferences."
     ],
-    "description": "The ability to improve decision quality and speed empowers teams to act swiftly with the right information. This approach fosters a culture of confidence and responsiveness, allowing organizations to adapt to changes more effectively. As a result, teams can seize opportunities and mitigate risks, ultimately driving better business outcomes."
+    "description": "The ability to improve decision quality and speed empowers teams to act swiftly with the right information. This approach fosters a culture of confidence and responsiveness, allowing organizations to adapt to changes more effectively. As a result, teams can seize opportunities and mitigate risks, ultimately driving better business outcomes.",
+    "question_1": "Can you share a specific instance when your team had to make a quick decision without enough context or confidence, and how that affected the outcome or incurred costs for the organization?",
+    "question_2": "What specific strategies have you been exploring to enhance decision quality and speed within your team, and as you reflect on your experiences, what approaches have empowered you to act confidently, while also identifying any challenges you've faced along the way?",
+    "question_3": "How critical is it for your organization to enhance decision quality and velocity at this moment, and what indications do you see of a genuine commitment from leadership and teams to implement changes in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "Decisions are made quickly, and we rarely second-guess ourselves.",
+        "I feel empowered to act without waiting for approval.",
+        "We adapt to changes seamlessly and without delays.",
+        "Our teams have the context they need to make informed choices.",
+        "I trust my team to handle challenges without constant oversight."
+      ],
+      "struggling": [
+        "We often miss opportunities because decisions take too long.",
+        "I’m unsure if we’re making the right choices most of the time.",
+        "We find ourselves reacting to issues instead of preventing them.",
+        "Communication gaps lead to confusion in decision-making.",
+        "It feels like we're constantly stuck in the planning phase."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 3,
+        "2": 4,
+        "3": 5,
+        "4": 4,
+        "5": 4,
+        "6": 3,
+        "7": 4,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 2,
+        "12": 2,
+        "13": 3,
+        "14": 5,
+        "15": 4,
+        "16": 5,
+        "17": 5,
+        "18": 4,
+        "19": 4,
+        "20": 3,
+        "21": 3,
+        "22": 2,
+        "23": 4,
+        "24": 5,
+        "25": 2,
+        "26": 1,
+        "27": 1,
+        "28": 4,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 5,
@@ -62,7 +536,60 @@
       "Improved visibility into interdependencies across multiple systems with Dotwork's graph-native architecture, resulting in a 15% increase in accurate stock level displays, and enhancing customer satisfaction by reducing the likelihood of inventory-related issues.",
       "Established a continuous feedback loop for team performance and project outcomes through Dotwork's integration capabilities, resulting in a 40% decrease in time-to-market for new products, and strengthening the company's competitive edge in the retail industry."
     ],
-    "description": "The ability to understand organizational design implications early allows companies to shape teams, scopes, and structures proactively. This matters because it helps avoid the chaos and disruption that often come with reactive reorganizations. By addressing design issues upfront, organizations can enhance collaboration and efficiency, leading to better business outcomes."
+    "description": "The ability to understand organizational design implications early allows companies to shape teams, scopes, and structures proactively. This matters because it helps avoid the chaos and disruption that often come with reactive reorganizations. By addressing design issues upfront, organizations can enhance collaboration and efficiency, leading to better business outcomes.",
+    "question_1": "Can you share an instance where your organization faced significant challenges or disruptions due to a lack of early understanding in organizational design, and what were the tangible impacts on team performance or project outcomes?",
+    "question_2": "What efforts have you made to understand organizational design implications early, and how have those efforts shaped your team's structure and collaboration? What successes have you experienced, and what challenges have you faced along the way?",
+    "question_3": "How critical do you feel it is for your organization to proactively understand and address organizational design implications at this moment, and what signs do you see that indicate a commitment from leadership and teams to make meaningful changes in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "We anticipate team needs before they arise.",
+        "Our structure allows for quick pivots without chaos.",
+        "Communication flows smoothly across all levels of the organization.",
+        "We resolve conflicts early and effectively.",
+        "Everyone understands their roles and how they contribute."
+      ],
+      "struggling": [
+        "It feels like we're constantly reacting to issues.",
+        "We often find ourselves in confusion during reorganizations.",
+        "Teams are unclear about their responsibilities and scopes.",
+        "Collaboration has taken a backseat to firefighting.",
+        "Our changes seem to create more problems than they solve."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 4,
+        "2": 4,
+        "3": 3,
+        "4": 3,
+        "5": 3,
+        "6": 4,
+        "7": 5,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 2,
+        "15": 2,
+        "16": 3,
+        "17": 3,
+        "18": 3,
+        "19": 3,
+        "20": 4,
+        "21": 5,
+        "22": 1,
+        "23": 4,
+        "24": 3,
+        "25": 2,
+        "26": 2,
+        "27": 1,
+        "28": 4,
+        "29": 2,
+        "30": 5
+      }
+    }
   },
   {
     "id": 6,
@@ -75,7 +602,60 @@
       "Real-time impact tracking features introduced resulting in a 50% decrease in time spent on performance evaluations, and empowering teams to learn from past investments to enhance future project success.",
       "Cross-platform collaboration tools integrated into Dotwork resulting in a 20% improvement in project delivery timelines, and breaking down silos to foster a more proactive and engaged organizational culture."
     ],
-    "description": "The ability to gain visibility into the investment portfolio mix allows organizations to understand how resources are allocated across various initiatives. This clarity helps in evaluating the impact and efficiency of each investment. Ultimately, it empowers decision-makers to optimize spending and enhance overall business performance."
+    "description": "The ability to gain visibility into the investment portfolio mix allows organizations to understand how resources are allocated across various initiatives. This clarity helps in evaluating the impact and efficiency of each investment. Ultimately, it empowers decision-makers to optimize spending and enhance overall business performance.",
+    "question_1": "Can you share a specific instance where a lack of visibility into your investment portfolio mix led to inefficient resource allocation, resulting in missed opportunities or increased costs for your initiatives?",
+    "question_2": "What have you been exploring to gain better visibility into your investment portfolio mix, and what strategies have you found effective or challenging in assessing allocation, impact, and efficiency across initiatives?",
+    "question_3": "How important is gaining visibility into your investment portfolio mix for your organization at this moment, and what level of commitment do you perceive from leadership and teams to take action and make meaningful changes in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "We clearly see how each initiative contributes to our overall goals.",
+        "Our allocation decisions are informed and timely, minimizing waste.",
+        "We can easily track the impact of our investments across initiatives.",
+        "Collaborative discussions help us understand dependencies and risks upfront.",
+        "There's a shared understanding of how resources are being utilized effectively."
+      ],
+      "struggling": [
+        "I often feel uncertain about where our resources are actually going.",
+        "It's hard to tell which initiatives are truly making a difference.",
+        "We seem to be reacting to issues rather than preventing them.",
+        "Many of our efforts overlap, but we lack clarity on that.",
+        "There's a constant sense of confusion about our investment priorities."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 3,
+        "5": 5,
+        "6": 4,
+        "7": 3,
+        "8": 3,
+        "9": 4,
+        "10": 2,
+        "11": 3,
+        "12": 4,
+        "13": 4,
+        "14": 4,
+        "15": 2,
+        "16": 1,
+        "17": 1,
+        "18": 2,
+        "19": 3,
+        "20": 2,
+        "21": 1,
+        "22": 1,
+        "23": 2,
+        "24": 3,
+        "25": 2,
+        "26": 1,
+        "27": 1,
+        "28": 3,
+        "29": 2,
+        "30": 1
+      }
+    }
   },
   {
     "id": 7,
@@ -88,7 +668,60 @@
       "Integration of customer insights and market analysis tools within the proposal framework resulting in a 20% improvement in market fit for new initiatives, and ensuring that proposals resonate with target audiences by reflecting accurate competitive positioning.",
       "Real-time tracking of proposal timelines and decision-making processes resulting in a 15% faster time-to-market for new initiatives, and allowing teams to respond more effectively to emerging trends and competitive pressures."
     ],
-    "description": "The ability to raise the baseline quality of proposals, plans, and pitches ensures that all key decisions are informed by clear and complete information. This matters because it leads to better alignment among stakeholders and reduces the risk of misunderstandings. Ultimately, this capability enhances decision-making efficiency and increases the likelihood of successful outcomes."
+    "description": "The ability to raise the baseline quality of proposals, plans, and pitches ensures that all key decisions are informed by clear and complete information. This matters because it leads to better alignment among stakeholders and reduces the risk of misunderstandings. Ultimately, this capability enhances decision-making efficiency and increases the likelihood of successful outcomes.",
+    "question_1": "Can you share a specific instance where a proposal or plan lacked clarity or completeness, and how that led to misunderstandings or costly decisions?",
+    "question_2": "What specific steps have you taken to raise the baseline quality of your proposals, plans, and pitches, and in reflecting on those experiences, what do you feel has worked well and what challenges have you encountered along the way?",
+    "question_3": "How critical is enhancing the quality of your proposals, plans, and pitches for your organization at this moment, and what signs of commitment do you observe from leadership and teams to make the necessary improvements in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "Decisions are made swiftly with all the right information at hand.",
+        "We rarely face misunderstandings because everyone is on the same page.",
+        "Our proposals are consistently clear, making stakeholder buy-in easier.",
+        "Feedback from our pitches is overwhelmingly positive and constructive.",
+        "Every initiative feels well-supported by detailed and comprehensive plans."
+      ],
+      "struggling": [
+        "It's frustrating when decisions are made without complete information.",
+        "We often have to revisit proposals due to unclear details.",
+        "Miscommunication is common, leading to wasted time and effort.",
+        "Stakeholders are frequently confused about project goals and direction.",
+        "Our pitches fall flat because the key points are lost in translation."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 3,
+        "2": 4,
+        "3": 4,
+        "4": 5,
+        "5": 4,
+        "6": 3,
+        "7": 4,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 2,
+        "13": 3,
+        "14": 4,
+        "15": 3,
+        "16": 3,
+        "17": 3,
+        "18": 4,
+        "19": 4,
+        "20": 3,
+        "21": 3,
+        "22": 2,
+        "23": 3,
+        "24": 4,
+        "25": 5,
+        "26": 2,
+        "27": 1,
+        "28": 5,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 8,
@@ -101,7 +734,60 @@
       "Introduced real-time inventory tracking through Dotwork’s unified system resulting in a 50% reduction in stockouts and overstocks, thereby improving sales performance and customer satisfaction.",
       "Enhanced visibility into marketing campaign effectiveness through unified analytics, which increased campaign targeting accuracy by 35%, ultimately leading to higher revenue opportunities and better customer engagement."
     ],
-    "description": "The ability to eliminate repetitive copy-paste and stitching across systems streamlines workflows and reduces manual errors. This matters because it allows teams to spend more time on valuable tasks that drive business growth. Ultimately, by minimizing repetitive work, organizations can enhance productivity and improve overall operational efficiency."
+    "description": "The ability to eliminate repetitive copy-paste and stitching across systems streamlines workflows and reduces manual errors. This matters because it allows teams to spend more time on valuable tasks that drive business growth. Ultimately, by minimizing repetitive work, organizations can enhance productivity and improve overall operational efficiency.",
+    "question_1": "Can you share a specific instance where your team faced significant challenges due to repetitive copy-paste tasks between systems, and what impact did that have on your project timelines or overall productivity?",
+    "question_2": "What specific initiatives have you pursued to eliminate repetitive copy-paste and stitching across systems, and in your experience, what strategies have been effective versus those that have faced challenges?",
+    "question_3": "How critical do you feel it is for your organization to eliminate repetitive copy-paste and stitching across systems at this moment, and what indications do you see regarding your leadership and teams' commitment to making the necessary changes to achieve that?",
+    "performance_signals": {
+      "high_performing": [
+        "We spend less time on manual data entry and more on strategic work.",
+        "Errors have drastically decreased, improving our overall quality.",
+        "Our teams collaborate efficiently, focusing on high-value tasks.",
+        "We've streamlined our workflows, making everything feel effortless.",
+        "Our outputs are more consistent, leading to greater client satisfaction."
+      ],
+      "struggling": [
+        "We're constantly fixing mistakes from data entry, which slows us down.",
+        "Every week, we seem to face the same issues due to manual processes.",
+        "It's frustrating how much time we waste on repetitive tasks.",
+        "Our teams are overwhelmed, juggling too many low-leverage activities.",
+        "We're missing deadlines because of errors that could have been avoided."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 2,
+        "6": 4,
+        "7": 3,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 3,
+        "15": 2,
+        "16": 2,
+        "17": 3,
+        "18": 4,
+        "19": 4,
+        "20": 3,
+        "21": 3,
+        "22": 3,
+        "23": 2,
+        "24": 4,
+        "25": 5,
+        "26": 2,
+        "27": 3,
+        "28": 4,
+        "29": 2,
+        "30": 3
+      }
+    }
   },
   {
     "id": 9,
@@ -114,7 +800,60 @@
       "Creation of a unified strategy dashboard that consolidates project priorities and goals, resulting in a 50% reduction in duplicated efforts, and ensuring that all teams are working towards shared objectives and strategic alignment.",
       "Introduction of automated reporting features that provide consistent updates from various digital tools, leading to a 20% improvement in information accuracy during review cycles, and enhancing the quality of deliverables across the organization."
     ],
-    "description": "The ability to enhance the effectiveness of planning and review cycles. This allows teams to collaborate more efficiently by aligning on goals and expectations, minimizing misunderstandings. As a result, organizations can save time and resources while making better-informed decisions."
+    "description": "The ability to enhance the effectiveness of planning and review cycles. This allows teams to collaborate more efficiently by aligning on goals and expectations, minimizing misunderstandings. As a result, organizations can save time and resources while making better-informed decisions.",
+    "question_1": "Can you share a specific instance where a lack of shared context during your planning or review cycles led to confusion or misalignment, and what impact that had on your team's time, resources, or decision-making?",
+    "question_2": "What specific strategies have you been exploring to enhance the effectiveness of your planning and review cycles, and in your experience, what approaches have led to clearer shared context and collaboration, while which ones have posed challenges?",
+    "question_3": "How important is it for your organization to enhance the effectiveness of planning and review cycles right now, and what do you perceive as the level of commitment from leadership and teams to take actionable steps towards reducing prep overhead and improving clarity in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "We align on goals easily, reducing confusion significantly.",
+        "Our review cycles are quicker and more productive than ever.",
+        "Team collaboration feels effortless, leading to better outcomes.",
+        "We frequently identify and address issues before they escalate.",
+        "There's a shared understanding of expectations across all teams."
+      ],
+      "struggling": [
+        "Misunderstandings frequently derail our planning efforts.",
+        "It feels like we're always behind on our work timelines.",
+        "Planning meetings often feel unproductive and wasteful.",
+        "We're unclear on priorities, causing frustration and delays.",
+        "Important details get overlooked, leading to costly mistakes."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 3,
+        "2": 4,
+        "3": 3,
+        "4": 5,
+        "5": 3,
+        "6": 4,
+        "7": 3,
+        "8": 5,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 3,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "18": 4,
+        "19": 4,
+        "20": 3,
+        "21": 3,
+        "22": 1,
+        "23": 2,
+        "24": 3,
+        "25": 3,
+        "26": 1,
+        "27": 1,
+        "28": 5,
+        "29": 2,
+        "30": 2
+      }
+    }
   },
   {
     "id": 10,
@@ -127,7 +866,60 @@
       "Integration of feedback loops into Dotwork’s project management workflows, leading to a 20% increase in the incorporation of user feedback in product cycles, and improving customer satisfaction and retention by ensuring that products meet market needs more effectively.",
       "Deployment of performance tracking metrics in Dotwork that monitor adherence to high-leverage behaviors, resulting in a 15% decrease in operational risks related to compliance and security, and promoting a proactive approach to risk management across the organization."
     ],
-    "description": "The ability to reinforce high-leverage behaviors through prompts and system nudges helps individuals develop better habits over time. This matters because consistent, positive behaviors can lead to improved performance and productivity across teams. By fostering these habits, organizations can enhance overall efficiency and achieve long-term success."
+    "description": "The ability to reinforce high-leverage behaviors through prompts and system nudges helps individuals develop better habits over time. This matters because consistent, positive behaviors can lead to improved performance and productivity across teams. By fostering these habits, organizations can enhance overall efficiency and achieve long-term success.",
+    "question_1": "Can you share an instance when your team struggled to maintain a positive habit or behavior, and what impact did that have on your productivity or performance?",
+    "question_2": "In your journey to reinforce high-leverage behaviors through prompts and system nudges, what specific changes have you been trying to implement? What strategies have you found to be effective, and where have you faced challenges?",
+    "question_3": "How pressing is the need to reinforce high-leverage behaviors through prompts and system nudges in your organization at this moment, and what level of commitment do you feel exists among leadership and teams to actively pursue improvements in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "I feel more confident making decisions thanks to timely nudges.",
+        "Our habits have improved, making us more productive every day.",
+        "I notice fewer mistakes because of the helpful reminders we get.",
+        "The system nudges keep us aligned and focused on our goals.",
+        "We celebrate small wins regularly, reinforcing positive behaviors effectively."
+      ],
+      "struggling": [
+        "I often forget important tasks without any reminders.",
+        "It feels like we're constantly backtracking due to missed behaviors.",
+        "There’s little consistency in how we approach our daily work.",
+        "Without prompts, we lose sight of our priorities and goals.",
+        "I don't see any change in habits despite our efforts."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 4,
+        "3": 3,
+        "4": 3,
+        "5": 2,
+        "6": 3,
+        "7": 3,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 5,
+        "15": 3,
+        "16": 4,
+        "17": 3,
+        "18": 4,
+        "19": 3,
+        "20": 4,
+        "21": 4,
+        "22": 2,
+        "23": 2,
+        "24": 4,
+        "25": 2,
+        "26": 2,
+        "27": 2,
+        "28": 4,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 11,
@@ -140,7 +932,60 @@
       "Development of standardized metrics to measure team performance against operating frameworks resulting in a 50% improvement in leadership insights for driving operational efficiency, and better decision-making across the organization.",
       "Enhanced documentation capabilities within Dotwork resulting in a 20% decrease in time spent deciphering incomplete documentation, and improved accuracy in implementation leading to higher quality outputs."
     ],
-    "description": "The ability to introduce and scale effective operating patterns ensures that best practices are integrated throughout the organization. This matters because it allows teams to work more efficiently and consistently, leading to improved collaboration and productivity. As a result, organizations can achieve better outcomes and drive sustained performance over time."
+    "description": "The ability to introduce and scale effective operating patterns ensures that best practices are integrated throughout the organization. This matters because it allows teams to work more efficiently and consistently, leading to improved collaboration and productivity. As a result, organizations can achieve better outcomes and drive sustained performance over time.",
+    "question_1": "Can you share a specific instance where the absence of effective operating patterns led to inefficiencies or misalignment within your teams, and what impact that had on project outcomes or overall productivity?",
+    "question_2": "What initiatives have you undertaken to introduce and scale effective operating patterns within your organization, and as you reflect on these efforts, what successes have you experienced, and where have you encountered challenges?",
+    "question_3": "In what ways do you feel the urgency to introduce and scale effective operating patterns within your organization right now, and how committed do you sense the leadership and teams are to actively making those changes?",
+    "performance_signals": {
+      "high_performing": [
+        "We consistently deliver high-quality features on time without last-minute rushes.",
+        "Collaboration feels natural; everyone knows their roles and responsibilities.",
+        "We easily adapt to changes, ensuring our efforts remain aligned with our goals.",
+        "It's clear what the priorities are, leading to focused and effective work.",
+        "Feedback loops help us continuously improve our methods and outcomes."
+      ],
+      "struggling": [
+        "We often miss deadlines because communication breaks down.",
+        "It's hard to tell who's responsible for what, causing confusion.",
+        "We keep redoing work because we don’t learn from past mistakes.",
+        "Our initiatives feel disconnected and lack a clear direction.",
+        "We find ourselves scrambling to fix issues that could have been avoided."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 4,
+        "3": 3,
+        "4": 4,
+        "5": 3,
+        "6": 4,
+        "7": 3,
+        "8": 4,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 4,
+        "15": 3,
+        "16": 2,
+        "17": 3,
+        "18": 5,
+        "19": 4,
+        "20": 4,
+        "21": 4,
+        "22": 1,
+        "23": 3,
+        "24": 3,
+        "25": 3,
+        "26": 2,
+        "27": 2,
+        "28": 4,
+        "29": 3,
+        "30": 3
+      }
+    }
   },
   {
     "id": 12,
@@ -153,7 +998,60 @@
       "Integrated real-time status updates reducing the reliance on outdated information, resulting in a 40% reduction in project timeline disruptions, and boosting overall team morale and efficiency.",
       "Standardized collaboration frameworks reducing ad hoc communication issues, resulting in a 50% decrease in misunderstandings and misalignments, and enabling teams to focus on shared goals rather than individual priorities."
     ],
-    "description": "The ability to facilitate alignment and decision-making across teams streamlines collaboration. This matters because it ensures that everyone is on the same page, reducing misunderstandings and delays. By improving coordination, organizations can respond more quickly to changes and make better-informed decisions."
+    "description": "The ability to facilitate alignment and decision-making across teams streamlines collaboration. This matters because it ensures that everyone is on the same page, reducing misunderstandings and delays. By improving coordination, organizations can respond more quickly to changes and make better-informed decisions.",
+    "question_1": "Can you share a specific instance where misalignment between teams led to delays or costly mistakes in a project, and what impact that had on your overall goals?",
+    "question_2": "What specific strategies have you been exploring to ease cross-team alignment and decision-making, and as you reflect on your experiences, what have you found to be effective versus what has posed challenges?",
+    "question_3": "How urgent do you feel it is for your organization to enhance cross-team alignment and decision-making at this moment, and what level of commitment do you perceive from leadership and teams to actively pursue improvements in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "Decisions are made quickly with everyone on the same page.",
+        "We rarely experience miscommunication between teams anymore.",
+        "Our alignment meetings are brief and focused, saving us time.",
+        "Collaboration feels effortless, and we adapt to changes rapidly.",
+        "Shared context helps us avoid redundant efforts across teams."
+      ],
+      "struggling": [
+        "We're constantly clarifying decisions that should have been clear.",
+        "Misunderstandings frequently derail our initiatives.",
+        "Team alignment meetings seem to drag on without clear outcomes.",
+        "It often feels like we're reacting instead of being proactive.",
+        "We duplicate efforts because there's no shared understanding."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 3,
+        "2": 4,
+        "3": 4,
+        "4": 4,
+        "5": 4,
+        "6": 3,
+        "7": 3,
+        "8": 4,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 3,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "18": 5,
+        "19": 4,
+        "20": 3,
+        "21": 4,
+        "22": 2,
+        "23": 2,
+        "24": 3,
+        "25": 3,
+        "26": 1,
+        "27": 2,
+        "28": 5,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 13,
@@ -166,7 +1064,60 @@
       "Streamlined communication channels resulting in a 40% reduction in time lost in back-and-forth communications, and allowing team members to focus on their core responsibilities without the distraction of unresolved questions.",
       "Cross-team collaboration tools resulting in a 20% improvement in project completion timelines, and enhancing agility in responding to market demands by ensuring that all relevant stakeholders are informed and aligned."
     ],
-    "description": "The ability to reduce the overhead of answering follow-up questions streamlines communication and information sharing. This matters because it allows team members to access deeper insights without needing to make additional requests, saving time and effort. As a result, organizations can foster a more efficient workflow and enhance collaboration across teams."
+    "description": "The ability to reduce the overhead of answering follow-up questions streamlines communication and information sharing. This matters because it allows team members to access deeper insights without needing to make additional requests, saving time and effort. As a result, organizations can foster a more efficient workflow and enhance collaboration across teams.",
+    "question_1": "Can you share a specific instance where the difficulty in accessing deeper insights led to delays or miscommunication in your team, and what impact that had on your project outcomes or resources?",
+    "question_2": "What specific strategies have you been exploring to reduce the overhead of answering follow-up questions, and in your experience, what approaches have been effective or challenging in making information sharing easier for others?",
+    "question_3": "How pressing is the need to reduce the overhead of answering follow-up questions within your organization at this moment, and how committed do you perceive your leadership and teams to be in implementing changes that can facilitate deeper insights without relying on ad hoc requests?",
+    "performance_signals": {
+      "high_performing": [
+        "I can find all the information I need without asking anyone for help.",
+        "Our team quickly resolves queries without getting sidetracked.",
+        "I love how I can dive deep into details without waiting for answers.",
+        "Collaboration feels effortless; everyone is on the same page immediately.",
+        "I rarely have to follow up on questions; clarity is built in."
+      ],
+      "struggling": [
+        "I often have to chase down answers to basic questions.",
+        "It feels like we waste time asking the same questions repeatedly.",
+        "Getting information takes too long, slowing down our work.",
+        "There are too many gaps; I can’t rely on what’s available.",
+        "I find myself stuck because I can't get the details I need."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 3,
+        "6": 3,
+        "7": 3,
+        "8": 3,
+        "9": 2,
+        "10": 2,
+        "11": 2,
+        "12": 2,
+        "13": 2,
+        "14": 3,
+        "15": 4,
+        "16": 4,
+        "17": 4,
+        "18": 5,
+        "19": 4,
+        "20": 3,
+        "21": 3,
+        "22": 2,
+        "23": 3,
+        "24": 4,
+        "25": 5,
+        "26": 2,
+        "27": 2,
+        "28": 5,
+        "29": 3,
+        "30": 3
+      }
+    }
   },
   {
     "id": 14,
@@ -179,7 +1130,60 @@
       "Implemented AI-driven insights for prioritizing product features resulting in a 25% decrease in iteration costs, and empowering teams to focus on high-impact areas that align with customer needs, ultimately driving better business outcomes.",
       "Established a unified goal-setting framework that aligns team objectives with company strategy, reducing strategic misalignment by 35%, and creating a cohesive vision that enhances team morale and productivity."
     ],
-    "description": "The ability to increase the frequency of strategy and goal refinement allows organizations to stay aligned with changing market conditions. This enables teams to respond more effectively to new challenges and opportunities as they arise. By lowering the cost of iteration, companies can foster a culture of continuous improvement and greater adaptability."
+    "description": "The ability to increase the frequency of strategy and goal refinement allows organizations to stay aligned with changing market conditions. This enables teams to respond more effectively to new challenges and opportunities as they arise. By lowering the cost of iteration, companies can foster a culture of continuous improvement and greater adaptability.",
+    "question_1": "Can you share a specific instance when your organization faced challenges due to infrequent strategy or goal refinement, and how that impacted costs, team morale, or your ability to seize new opportunities?",
+    "question_2": "What specific strategies have you been implementing to increase the frequency of your strategy and goal refinement, and as you reflect on your experiences, what aspects have really resonated and worked well for you, while what challenges have you encountered that may have hindered progress?",
+    "question_3": "How critical do you feel it is for your organization to enhance the frequency of strategy and goal refinement at this moment, and what commitment do you sense from leadership and teams to actively pursue changes that lower the cost of iteration and foster a more adaptable environment?",
+    "performance_signals": {
+      "high_performing": [
+        "We adapt our strategies quickly based on real-time feedback.",
+        "Our teams refine goals seamlessly as market conditions change.",
+        "Iterating on our work has become a cost-effective practice.",
+        "We leverage insights to pivot our efforts without hesitation.",
+        "Continuous improvement feels natural and part of our culture."
+      ],
+      "struggling": [
+        "We often miss opportunities because our strategies feel outdated.",
+        "It takes too long to adapt our goals when challenges arise.",
+        "Changing direction feels expensive and burdensome for us.",
+        "We're stuck responding to issues instead of anticipating them.",
+        "Refining our strategies feels like an afterthought, not a priority."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 4,
+        "2": 5,
+        "3": 4,
+        "4": 3,
+        "5": 4,
+        "6": 3,
+        "7": 4,
+        "8": 5,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 4,
+        "15": 3,
+        "16": 3,
+        "17": 4,
+        "18": 3,
+        "19": 3,
+        "20": 3,
+        "21": 2,
+        "22": 1,
+        "23": 2,
+        "24": 3,
+        "25": 2,
+        "26": 1,
+        "27": 1,
+        "28": 4,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 15,
@@ -192,7 +1196,60 @@
       "Integrating training resources and support systems within Dotwork to ease the transition to new digital platforms, resulting in a 20% decrease in employee turnover due to change fatigue, and improving overall team morale and engagement by ensuring employees feel supported during transitions.",
       "Leveraging Dotwork’s analytics capabilities to provide visibility into process effectiveness, resulting in a 15% reduction in wasted resources, and allowing teams to focus on high-impact areas that drive customer satisfaction and revenue growth."
     ],
-    "description": "The ability to enable continuous process improvement allows organizations to adapt more easily to changes and support new ways of working. This matters because it helps teams to innovate and respond quickly to evolving business needs. As a result, organizations can enhance efficiency, reduce costs, and improve overall performance."
+    "description": "The ability to enable continuous process improvement allows organizations to adapt more easily to changes and support new ways of working. This matters because it helps teams to innovate and respond quickly to evolving business needs. As a result, organizations can enhance efficiency, reduce costs, and improve overall performance.",
+    "question_1": "Can you share an instance where your team faced challenges in implementing a new process or adapting to a change, and how that impacted your efficiency, costs, or overall performance?",
+    "question_2": "What specific initiatives have you undertaken to enable continuous process improvement within your organization, and as you reflect on those efforts, what successes have you experienced, and what challenges have you faced in making change easier to implement and new ways of working more supportive?",
+    "question_3": "How urgent is it for your organization to enhance continuous process improvement at this moment, and what commitment do you perceive from both leadership and teams to embrace the necessary changes to support this initiative?",
+    "performance_signals": {
+      "high_performing": [
+        "We adapt to changes quickly, making new efforts feel seamless.",
+        "Our teams embrace new ways of working without hesitation.",
+        "Issues are resolved before they escalate into bigger problems.",
+        "Collaboration flows naturally, leading to innovative solutions.",
+        "We feel empowered to suggest improvements that are acted upon."
+      ],
+      "struggling": [
+        "Changes take forever to implement, causing frustration.",
+        "We often revert to old methods because new ones feel risky.",
+        "Problems keep resurfacing, and we're stuck in a cycle.",
+        "Ideas for improvement frequently get ignored or dismissed.",
+        "Our response to change feels reactive, not proactive."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 3,
+        "3": 4,
+        "4": 4,
+        "5": 3,
+        "6": 3,
+        "7": 3,
+        "8": 4,
+        "9": 2,
+        "10": 2,
+        "11": 2,
+        "12": 2,
+        "13": 3,
+        "14": 4,
+        "15": 3,
+        "16": 4,
+        "17": 5,
+        "18": 4,
+        "19": 4,
+        "20": 5,
+        "21": 3,
+        "22": 3,
+        "23": 3,
+        "24": 4,
+        "25": 3,
+        "26": 2,
+        "27": 2,
+        "28": 4,
+        "29": 3,
+        "30": 3
+      }
+    }
   },
   {
     "id": 16,
@@ -205,7 +1262,60 @@
       "Real-time tracking of project timelines and milestones resulting in a 20% reduction in project delays, and enabling teams to proactively address bottlenecks, thereby enhancing overall efficiency and accountability.",
       "Enhanced visibility into transformation impact through a comprehensive dashboard resulting in a 15% increase in employee satisfaction, and empowering teams with clear insights into their contributions to organizational goals, reducing frustration and disengagement."
     ],
-    "description": "The ability to make transformation progress and impact visible. This helps teams understand what changes are effective and where challenges remain, allowing for informed decision-making. By clearly showing the status of initiatives, organizations can better allocate resources and drive successful outcomes."
+    "description": "The ability to make transformation progress and impact visible. This helps teams understand what changes are effective and where challenges remain, allowing for informed decision-making. By clearly showing the status of initiatives, organizations can better allocate resources and drive successful outcomes.",
+    "question_1": "Can you share an instance where your team struggled to assess the progress of a transformation initiative, and how that lack of visibility impacted resource allocation or decision-making?",
+    "question_2": "What specific efforts have you made to enhance the visibility of transformation progress and impact within your team, and as you reflect on those experiences, what approaches have you found to be effective, and where have you encountered challenges?",
+    "question_3": "How urgent is it for your organization to make transformation progress and impact visible right now, and what level of commitment do you observe from leadership and teams to actively address any challenges in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "We can easily see which initiatives are driving real change.",
+        "It's clear where our efforts are stuck, allowing us to adjust quickly.",
+        "Our teams feel confident addressing challenges with visible progress tracking.",
+        "We allocate resources effectively based on what’s working and what’s not.",
+        "Everyone understands the impact of their contributions towards transformation."
+      ],
+      "struggling": [
+        "I have no idea where our initiatives stand right now.",
+        "It feels like we're addressing issues too late, without visibility.",
+        "We often allocate resources without knowing what's actually effective.",
+        "Changes seem random, and I can’t see any clear impact.",
+        "Our challenges remain hidden, making it hard to guide our efforts."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 4,
+        "3": 3,
+        "4": 4,
+        "5": 4,
+        "6": 3,
+        "7": 3,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 2,
+        "12": 3,
+        "13": 3,
+        "14": 5,
+        "15": 3,
+        "16": 2,
+        "17": 3,
+        "18": 3,
+        "19": 4,
+        "20": 4,
+        "21": 2,
+        "22": 2,
+        "23": 2,
+        "24": 4,
+        "25": 3,
+        "26": 1,
+        "27": 1,
+        "28": 4,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 17,
@@ -218,7 +1328,60 @@
       "Creation of standardized workflows across teams to streamline tool usage and data management, resulting in a 15% decrease in project delays and enhancing collaboration between developers, designers, and product managers.",
       "Development of a visual strategy mapping tool that aligns team priorities with organizational goals, resulting in a 40% increase in cross-team initiative alignment, and improving overall strategic execution across the organization."
     ],
-    "description": "The ability to maximize the value of existing tools by integrating them with other data sources. This connection allows organizations to gain deeper insights and make informed decisions based on a broader perspective. Ultimately, harnessing this capability leads to improved efficiency and enhanced business outcomes."
+    "description": "The ability to maximize the value of existing tools by integrating them with other data sources. This connection allows organizations to gain deeper insights and make informed decisions based on a broader perspective. Ultimately, harnessing this capability leads to improved efficiency and enhanced business outcomes.",
+    "question_1": "Can you share a specific instance when not integrating your existing tools with other data sources led to missed insights or decisions that negatively impacted your operations or costs?",
+    "question_2": "What efforts have you made to enhance the value you get from your existing tools by connecting them with other data sources, and in reflecting on those experiences, what approaches have yielded positive results while which ones have posed challenges?",
+    "question_3": "How important is it for your organization to enhance the integration of your existing tools with other data sources right now, and what level of commitment do you feel from leadership and teams to make the necessary changes to unlock deeper insights?",
+    "performance_signals": {
+      "high_performing": [
+        "We've gained insights that completely transformed our decision-making process.",
+        "Connecting our tools has reduced duplicated efforts significantly.",
+        "I can see the impact of our initiatives in real-time now.",
+        "Our teams collaborate effortlessly with data at their fingertips.",
+        "Integration has made our strategies more aligned and effective."
+      ],
+      "struggling": [
+        "We're often making decisions without a complete picture.",
+        "I feel like we're missing important insights that could guide us.",
+        "Our tools aren't communicating, leading to wasted time and effort.",
+        "It's frustrating to chase down information from different sources.",
+        "We often react to issues instead of proactively addressing them."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 3,
+        "3": 2,
+        "4": 3,
+        "5": 3,
+        "6": 3,
+        "7": 2,
+        "8": 2,
+        "9": 2,
+        "10": 1,
+        "11": 2,
+        "12": 2,
+        "13": 2,
+        "14": 3,
+        "15": 4,
+        "16": 4,
+        "17": 3,
+        "18": 4,
+        "19": 3,
+        "20": 2,
+        "21": 2,
+        "22": 1,
+        "23": 2,
+        "24": 5,
+        "25": 3,
+        "26": 1,
+        "27": 4,
+        "28": 3,
+        "29": 2,
+        "30": 2
+      }
+    }
   },
   {
     "id": 18,
@@ -231,7 +1394,60 @@
       "Visualization of team contributions to customer experience metrics resulting in a 15% increase in engagement scores, and helping employees see the direct impact of their work on customer satisfaction and sales performance.",
       "Integration of performance evaluations with strategic outcomes resulting in a 20% decrease in turnover rates, and ensuring employees feel valued and connected to the company’s mission and objectives."
     ],
-    "description": "The ability to increase employee engagement helps individuals connect their daily tasks to larger organizational goals. This connection fosters a sense of purpose and motivation among employees. As a result, higher engagement levels can lead to improved productivity and lower turnover rates."
+    "description": "The ability to increase employee engagement helps individuals connect their daily tasks to larger organizational goals. This connection fosters a sense of purpose and motivation among employees. As a result, higher engagement levels can lead to improved productivity and lower turnover rates.",
+    "question_1": "Can you share a specific instance where employees struggled to see how their daily tasks contributed to the organization's strategic goals, and how that disconnect impacted productivity or morale in your team?",
+    "question_2": "What specific strategies have you been implementing to increase employee engagement, and as you reflect on those efforts, what do you feel has resonated well with your team, and what challenges have you encountered along the way?",
+    "question_3": "How urgent is it for your organization to enhance employee engagement by helping individuals connect their daily tasks to strategic goals? What commitment do you sense from leadership and teams to actively pursue improvements in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "I can clearly see how my work contributes to our strategic goals.",
+        "There's a real sense of purpose in our daily tasks.",
+        "I feel motivated because I know my efforts lead to meaningful outcomes.",
+        "Our initiatives align closely with what matters most to the organization.",
+        "Team discussions always connect our work back to larger objectives."
+      ],
+      "struggling": [
+        "I often wonder how my daily tasks fit into the bigger picture.",
+        "It's hard to stay motivated when I don't see the impact of my work.",
+        "Our efforts feel disconnected from the company's strategic goals.",
+        "I feel lost about what really matters in my role.",
+        "There's a lack of clarity on how our work drives results for the organization."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 4,
+        "3": 2,
+        "4": 3,
+        "5": 2,
+        "6": 3,
+        "7": 2,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 1,
+        "14": 5,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "18": 4,
+        "19": 3,
+        "20": 3,
+        "21": 4,
+        "22": 1,
+        "23": 1,
+        "24": 3,
+        "25": 2,
+        "26": 4,
+        "27": 1,
+        "28": 4,
+        "29": 2,
+        "30": 2
+      }
+    }
   },
   {
     "id": 19,
@@ -244,7 +1460,60 @@
       "Creating a synchronized planning calendar for marketing and development teams resulting in a 50% reduction in mismatched product launches, and ensuring that promotional campaigns align with available features and inventory.",
       "Developing a real-time dashboard for leadership to monitor team priorities and progress resulting in a 35% increase in resource allocation efficiency, and providing clarity that empowers teams to make informed decisions while aligning with strategic goals."
     ],
-    "description": "The ability to support local flexibility while maintaining enterprise alignment empowers teams to work in ways that suit their unique needs. This approach fosters creativity and innovation, allowing teams to respond quickly to changing demands. By linking local efforts to broader organizational goals, companies enhance accountability and drive collective success."
+    "description": "The ability to support local flexibility while maintaining enterprise alignment empowers teams to work in ways that suit their unique needs. This approach fosters creativity and innovation, allowing teams to respond quickly to changing demands. By linking local efforts to broader organizational goals, companies enhance accountability and drive collective success.",
+    "question_1": "Can you share a specific instance where your team struggled to align with enterprise goals due to a lack of local flexibility, and what impact did that have on your project outcomes or team morale?",
+    "question_2": "What specific strategies have you been exploring to enhance local flexibility while ensuring alignment with enterprise goals, and in your experience, what have you found to be effective or challenging in that journey?",
+    "question_3": "What are your thoughts on the current urgency to enhance local flexibility while ensuring enterprise alignment in your organization, and how committed do you feel leadership and teams are to making meaningful changes in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "We adapt quickly to changes and still meet our goals.",
+        "Teams feel empowered to innovate while aligned with the larger vision.",
+        "Our local efforts drive real impact on enterprise objectives.",
+        "There's a strong sense of accountability across all teams.",
+        "Collaboration feels natural and enhances our responsiveness to demands."
+      ],
+      "struggling": [
+        "It feels like we're always out of sync with the company's goals.",
+        "Local teams are hesitant to try new approaches due to misalignment.",
+        "There's confusion about how our work fits into the bigger picture.",
+        "Accountability is lacking, leading to missed deadlines and goals.",
+        "We often struggle to adapt to changes without clear direction."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 3,
+        "2": 4,
+        "3": 3,
+        "4": 3,
+        "5": 3,
+        "6": 4,
+        "7": 3,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 2,
+        "12": 2,
+        "13": 2,
+        "14": 4,
+        "15": 3,
+        "16": 4,
+        "17": 4,
+        "18": 5,
+        "19": 4,
+        "20": 3,
+        "21": 5,
+        "22": 2,
+        "23": 3,
+        "24": 4,
+        "25": 2,
+        "26": 2,
+        "27": 2,
+        "28": 5,
+        "29": 3,
+        "30": 3
+      }
+    }
   },
   {
     "id": 20,
@@ -257,7 +1526,60 @@
       "Enhancing real-time collaboration tools within Dotwork for product managers and compliance teams resulting in a 25% faster approval process, and enabling teams to be more agile in responding to market demands while maintaining compliance.",
       "Establishing a comprehensive training module on compliance integrated into Dotwork, resulting in a 40% decrease in rework due to compliance oversights, and empowering teams to prioritize compliance as a fundamental aspect of their workflow."
     ],
-    "description": "The ability to implement thoughtful, product-centric governance ensures that compliance and oversight are integrated into everyday workflows. This matters because it allows teams to remain agile while still adhering to necessary regulations and standards. As a result, organizations can innovate quickly without sacrificing accountability or quality."
+    "description": "The ability to implement thoughtful, product-centric governance ensures that compliance and oversight are integrated into everyday workflows. This matters because it allows teams to remain agile while still adhering to necessary regulations and standards. As a result, organizations can innovate quickly without sacrificing accountability or quality.",
+    "question_1": "Can you share a specific instance where the lack of product-centric governance led to compliance issues or oversight challenges in your workflows, and what were the costs or impacts of that situation on your team's agility and overall project outcomes?",
+    "question_2": "What specific strategies have you been exploring to enhance product-centric governance in your workflows, and in your experience, what has facilitated agility while ensuring compliance, versus what challenges have you faced in this area?",
+    "question_3": "How urgent do you feel it is for your organization to enhance thoughtful, product-centric governance in your workflows, and what level of commitment do you perceive from leadership and teams to actively integrate compliance and oversight while maintaining agility?",
+    "performance_signals": {
+      "high_performing": [
+        "We can adapt our strategies quickly without compromising on compliance.",
+        "Oversight feels like a supportive partner, not a hindrance to innovation.",
+        "Our teams confidently push features out, knowing they meet all standards.",
+        "I see clear accountability in every initiative we undertake.",
+        "Agility and compliance go hand in hand in our workflows."
+      ],
+      "struggling": [
+        "We often miss compliance deadlines due to slow decision-making.",
+        "It feels like we have to choose between speed and quality.",
+        "Oversight makes us second-guess our innovative ideas too often.",
+        "I see confusion around compliance requirements on every effort.",
+        "We spend too much time correcting mistakes instead of delivering."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 3,
+        "2": 4,
+        "3": 4,
+        "4": 3,
+        "5": 4,
+        "6": 2,
+        "7": 3,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 4,
+        "15": 3,
+        "16": 4,
+        "17": 4,
+        "18": 3,
+        "19": 3,
+        "20": 2,
+        "21": 2,
+        "22": 3,
+        "23": 4,
+        "24": 4,
+        "25": 2,
+        "26": 1,
+        "27": 1,
+        "28": 3,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 21,
@@ -270,7 +1592,60 @@
       "Developed a visual mapping tool that aligns project goals with customer needs, decreasing product development iterations by 15%, and ensuring that strategies resonate better with users, ultimately reducing wasted resources.",
       "Integrated real-time data analytics that enhance responsiveness to market changes, allowing teams to pivot strategies 20% faster, thereby increasing the organization’s agility in a competitive retail landscape."
     ],
-    "description": "The ability to increase buy-in and gather diverse input during strategy development. This ensures that multiple perspectives are considered early on, leading to a more comprehensive and adaptable strategy. By engaging the right voices from the start, organizations can reduce the risk of misalignment and enhance overall commitment to the strategy."
+    "description": "The ability to increase buy-in and gather diverse input during strategy development. This ensures that multiple perspectives are considered early on, leading to a more comprehensive and adaptable strategy. By engaging the right voices from the start, organizations can reduce the risk of misalignment and enhance overall commitment to the strategy.",
+    "question_1": "Can you share a specific instance where not involving diverse voices early in your strategy development led to significant challenges or costs down the line, and how did that impact your overall alignment and commitment to the strategy?",
+    "question_2": "What strategies have you been implementing to enhance buy-in and gather diverse input during your strategy development, and what successes or challenges have you encountered along the way that might reveal patterns in your approach?",
+    "question_3": "How would you describe the current urgency for your organization to enhance buy-in and diversity of input during strategy development? What commitment do you observe from leadership and your teams to actively engage the right voices from the beginning and adapt the strategy as needed?",
+    "performance_signals": {
+      "high_performing": [
+        "We feel our diverse input shapes a more adaptable strategy.",
+        "Engaging the right voices early has prevented major misalignments.",
+        "It’s clear everyone’s perspective is valued in our discussions.",
+        "Our strategic direction feels cohesive and well-supported by all.",
+        "We've avoided costly pivots thanks to early collaboration."
+      ],
+      "struggling": [
+        "It often feels like decisions are made without our input.",
+        "We're facing pushback because not everyone was consulted early on.",
+        "I see a lot of confusion about our strategy’s direction.",
+        "Our efforts seem disjointed and lack broad support.",
+        "We keep revisiting decisions that should have been settled earlier."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 5,
+        "2": 4,
+        "3": 3,
+        "4": 3,
+        "5": 3,
+        "6": 2,
+        "7": 3,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 3,
+        "15": 4,
+        "16": 4,
+        "17": 3,
+        "18": 5,
+        "19": 3,
+        "20": 4,
+        "21": 2,
+        "22": 1,
+        "23": 3,
+        "24": 4,
+        "25": 2,
+        "26": 1,
+        "27": 1,
+        "28": 5,
+        "29": 2,
+        "30": 2
+      }
+    }
   },
   {
     "id": 22,
@@ -283,7 +1658,60 @@
       "Streamlined collaboration features that reduce the time spent on cross-team communication by 50%, and fostering a more cohesive environment that enhances productivity and reduces confusion among product managers and marketers.",
       "Integration with existing BI and analytics tools resulting in a 35% improvement in data accuracy for decision-making, and enabling teams to make informed choices that align closely with customer expectations and market trends."
     ],
-    "description": "The ability to reduce the cost of maintaining high-quality contextual models ensures that frameworks like customer segmentation and product taxonomies stay accurate and relevant. This matters because it allows organizations to respond quickly to changing market conditions without being bogged down by manual updates. By streamlining these processes, businesses can allocate resources more effectively and improve decision-making."
+    "description": "The ability to reduce the cost of maintaining high-quality contextual models ensures that frameworks like customer segmentation and product taxonomies stay accurate and relevant. This matters because it allows organizations to respond quickly to changing market conditions without being bogged down by manual updates. By streamlining these processes, businesses can allocate resources more effectively and improve decision-making.",
+    "question_1": "Can you describe a specific instance where maintaining your customer segmentation or product taxonomy became overly burdensome or costly, and how that impacted your ability to respond to market changes?",
+    "question_2": "What have you been trying to improve in reducing the cost of maintaining high-quality contextual models, and in your journey, what strategies have you found effective, and which ones have presented challenges?",
+    "question_3": "How important is it for your organization to reduce the costs associated with maintaining high-quality contextual models like customer segmentation and product taxonomies right now, and what level of commitment do you perceive from leadership and teams to implement changes in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "Our customer insights are always up-to-date and relevant.",
+        "We respond to market changes without delay or extra costs.",
+        "Maintaining our product taxonomy feels effortless and efficient.",
+        "We can pivot our strategies quickly based on accurate data.",
+        "Our segmentation models help us target customers precisely every time."
+      ],
+      "struggling": [
+        "Updating our models takes far too much time and resources.",
+        "We often miss trends because our data is outdated.",
+        "Our customer segmentation feels irrelevant and disconnected.",
+        "It feels like we're always reacting instead of being proactive.",
+        "Maintaining accuracy in our frameworks is a constant challenge."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 3,
+        "3": 3,
+        "4": 3,
+        "5": 3,
+        "6": 4,
+        "7": 4,
+        "8": 3,
+        "9": 4,
+        "10": 2,
+        "11": 2,
+        "12": 2,
+        "13": 3,
+        "14": 4,
+        "15": 5,
+        "16": 4,
+        "17": 4,
+        "18": 3,
+        "19": 3,
+        "20": 2,
+        "21": 2,
+        "22": 3,
+        "23": 3,
+        "24": 5,
+        "25": 4,
+        "26": 2,
+        "27": 2,
+        "28": 3,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 23,
@@ -296,7 +1724,60 @@
       "Streamlined the planning process to eliminate reactive decision-making, resulting in a 20% improvement in overall project quality metrics, enhancing the organization’s ability to innovate and respond to customer needs.",
       "Integrated cross-team visibility into project timelines, reducing missed deadlines by 40%, which directly contributes to improved operational efficiency and maximizes revenue opportunities."
     ],
-    "description": "The ability to assess team capacity and allocation in a more realistic manner. This allows organizations to understand their strengths and make informed decisions about resource distribution. As a result, teams can enhance their execution capabilities and drive long-term success."
+    "description": "The ability to assess team capacity and allocation in a more realistic manner. This allows organizations to understand their strengths and make informed decisions about resource distribution. As a result, teams can enhance their execution capabilities and drive long-term success.",
+    "question_1": "Can you share a specific instance where your team faced challenges in accurately assessing capacity and allocation, and how that impacted project outcomes or led to resource mismanagement costs?",
+    "question_2": "What specific strategies have you been exploring to gain a more realistic view of your team's capacity and allocation, and in reflecting on those efforts, what have you found to be effective versus what has presented challenges?",
+    "question_3": "How pressing is the need to develop a more realistic view of your team's capacity and allocation in your organization at this moment? What kind of commitment do you sense from leadership and team members to embrace changes that enhance your long-term execution strength in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "We have a clear understanding of our team's strengths and how to leverage them.",
+        "Resource allocation feels intuitive and aligns perfectly with our strategic goals.",
+        "There's a sense of ownership in initiatives because everyone knows their capabilities.",
+        "Our long-term planning is more accurate, leading to fewer surprises along the way.",
+        "We can shift resources quickly based on current needs without missing a beat."
+      ],
+      "struggling": [
+        "I often feel like we don't know who can handle what tasks effectively.",
+        "Resources seem stretched thin, leading to constant last-minute adjustments.",
+        "There's confusion about who is responsible for what in our efforts.",
+        "We frequently encounter delays because we misjudged our team's capacity.",
+        "It's hard to see how our investments are impacting long-term success."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 4,
+        "3": 4,
+        "4": 3,
+        "5": 4,
+        "6": 5,
+        "7": 4,
+        "8": 3,
+        "9": 2,
+        "10": 1,
+        "11": 1,
+        "12": 1,
+        "13": 2,
+        "14": 3,
+        "15": 2,
+        "16": 2,
+        "17": 2,
+        "18": 3,
+        "19": 4,
+        "20": 2,
+        "21": 4,
+        "22": 2,
+        "23": 2,
+        "24": 3,
+        "25": 2,
+        "26": 1,
+        "27": 1,
+        "28": 4,
+        "29": 3,
+        "30": 2
+      }
+    }
   },
   {
     "id": 24,
@@ -309,6 +1790,59 @@
       "Developed a centralized system for tracking data quality metrics resulting in a 15% increase in data usability scores, and fostering a culture of accountability and trust in the data used across the organization.",
       "Established cross-team governance protocols for data management resulting in a 20% decrease in operational inefficiencies, and enhancing overall alignment and strategic decision-making across departments."
     ],
-    "description": "The ability to enhance trust in data and documentation throughout the system. This ensures that users can rely on accurate and credible information for informed decision-making. By fostering trust in data, organizations can improve collaboration and drive better business outcomes."
+    "description": "The ability to enhance trust in data and documentation throughout the system. This ensures that users can rely on accurate and credible information for informed decision-making. By fostering trust in data, organizations can improve collaboration and drive better business outcomes.",
+    "question_1": "Can you share a specific instance where a lack of trust in your data or documentation led to a significant decision-making error or operational issue, and what costs or impacts did that have on your team or organization?",
+    "question_2": "What specific efforts have you made to enhance trust in data and documentation across the system, and as you reflect on those experiences, what strategies have you found to be effective, and which ones have posed challenges?",
+    "question_3": "How important is it for your organization to enhance trust in data and documentation at this moment, and what do you perceive as the level of commitment from leadership and teams to actively make the necessary changes in this area?",
+    "performance_signals": {
+      "high_performing": [
+        "I trust the data we have; it informs my decisions every day.",
+        "We can easily find reliable documentation when we need it.",
+        "Collaborating with others feels seamless because the data is accurate.",
+        "Decisions are made faster since we rely on trustworthy information.",
+        "Our team feels confident in using AI to enhance our data quality."
+      ],
+      "struggling": [
+        "I often second-guess the data; it doesn't feel reliable.",
+        "Finding accurate documentation is like searching for a needle in a haystack.",
+        "Collaboration suffers because no one trusts the available information.",
+        "Decisions take longer since we can't rely on the data we have.",
+        "The AI tools we use often provide confusing or incorrect insights."
+      ]
+    },
+    "capability_relevance": {
+      "relevance_scores": {
+        "1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 2,
+        "5": 2,
+        "6": 2,
+        "7": 3,
+        "8": 3,
+        "9": 2,
+        "10": 2,
+        "11": 2,
+        "12": 4,
+        "13": 3,
+        "14": 4,
+        "15": 3,
+        "16": 3,
+        "17": 3,
+        "18": 4,
+        "19": 2,
+        "20": 3,
+        "21": 3,
+        "22": 2,
+        "23": 3,
+        "24": 5,
+        "25": 5,
+        "26": 2,
+        "27": 2,
+        "28": 4,
+        "29": 2,
+        "30": 2
+      }
+    }
   }
 ]
