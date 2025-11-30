@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causal Graph - Dotwork Impact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        .node {
+            cursor: pointer;
+        }
+        .node:hover {
+            stroke: #3b82f6;
+            stroke-width: 3px;
+        }
+        .link {
+            stroke: #94a3b8;
+            stroke-opacity: 0.6;
+            stroke-width: 2px;
+        }
+        .link-label {
+            font-size: 11px;
+            fill: #64748b;
+            font-weight: 500;
+            pointer-events: none;
+        }
+        .node-label {
+            font-size: 11px;
+            fill: #1e293b;
+            font-weight: 500;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-2">Causal Graph</h1>
+                        <p class="text-purple-100">Value driver relationships and dependencies</p>
+                    </div>
+                    <a href="index.html" class="text-purple-100 hover:text-white underline text-sm">Back to Value Drivers</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto p-8">
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                <div class="mb-4 text-sm text-gray-600">
+                    <p>This diagram shows causal relationships between value drivers. Drag nodes to rearrange. Hover to highlight connections.</p>
+                </div>
+                <div id="graph-container" class="border border-gray-200 rounded-lg bg-gray-50"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get base path for GitHub Pages compatibility
+        function getBasePath() {
+            const path = window.location.pathname;
+            const lastSlash = path.lastIndexOf('/');
+            if (lastSlash > 0) {
+                return path.substring(0, lastSlash + 1);
+            }
+            return '/';
+        }
+
+        // Helper function to fetch JSON with proper base path
+        async function fetchJSON(filename) {
+            const basePath = getBasePath();
+            const url = basePath + filename;
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filename}: ${response.status} ${response.statusText}`);
+            }
+            return await response.json();
+        }
+
+        let graphData = null;
+        let svg = null;
+        let simulation = null;
+
+        async function loadGraph() {
+            try {
+                graphData = await fetchJSON('causal_graph.json');
+                renderGraph();
+            } catch (error) {
+                console.error('Error loading graph data:', error);
+                document.getElementById('graph-container').innerHTML = 
+                    '<div class="text-red-500 p-4">Error loading graph data. Please ensure causal_graph.json is in the same directory.</div>';
+            }
+        }
+
+        function renderGraph() {
+            const container = document.getElementById('graph-container');
+            container.innerHTML = '';
+
+            const width = container.clientWidth || 1200;
+            const height = Math.max(800, window.innerHeight - 300);
+
+            // Create SVG
+            svg = d3.select('#graph-container')
+                .append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            // Create container for zoom/pan
+            const g = svg.append('g');
+
+            // Define arrow markers for directed edges
+            const defs = svg.append('defs');
+            const marker = defs.append('marker')
+                .attr('id', 'arrowhead')
+                .attr('viewBox', '0 -5 10 10')
+                .attr('refX', 30)
+                .attr('refY', 0)
+                .attr('markerWidth', 6)
+                .attr('markerHeight', 6)
+                .attr('orient', 'auto')
+                .append('path')
+                .attr('d', 'M0,-5L10,0L0,5')
+                .attr('fill', '#94a3b8');
+
+            // Add zoom behavior
+            const zoom = d3.zoom()
+                .scaleExtent([0.3, 3])
+                .on('zoom', (event) => {
+                    g.attr('transform', event.transform);
+                });
+            svg.call(zoom);
+
+            const nodes = graphData.nodes.map(d => ({ ...d }));
+            const links = graphData.edges.map(d => ({
+                ...d,
+                source: d.from,
+                target: d.to
+            }));
+
+            // Create force simulation
+            simulation = d3.forceSimulation(nodes)
+                .force('link', d3.forceLink(links).id(d => d.id).distance(150))
+                .force('charge', d3.forceManyBody().strength(-400))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide().radius(60));
+
+            // Create edges with arrows
+            const link = g.append('g')
+                .selectAll('line')
+                .data(links)
+                .enter()
+                .append('line')
+                .attr('class', 'link')
+                .attr('marker-end', 'url(#arrowhead)');
+
+            // Create edge labels
+            const linkLabels = g.append('g')
+                .selectAll('text')
+                .data(links)
+                .enter()
+                .append('text')
+                .attr('class', 'link-label')
+                .text(d => d.label)
+                .attr('text-anchor', 'middle');
+
+            // Create nodes
+            const node = g.append('g')
+                .selectAll('circle')
+                .data(nodes)
+                .enter()
+                .append('circle')
+                .attr('class', 'node')
+                .attr('r', 25)
+                .attr('fill', '#3b82f6')
+                .attr('stroke', '#1e40af')
+                .attr('stroke-width', 2)
+                .call(drag(simulation));
+
+            // Create node labels (titles)
+            const nodeLabels = g.append('g')
+                .selectAll('text')
+                .data(nodes)
+                .enter()
+                .append('text')
+                .attr('class', 'node-label')
+                .text(d => d.title || d.id)
+                .attr('text-anchor', 'middle')
+                .attr('dy', 4)
+                .attr('fill', 'white')
+                .attr('font-weight', 'bold')
+                .attr('font-size', '10px')
+                .attr('pointer-events', 'none');
+
+            // Create tooltip for node details
+            const tooltip = d3.select('body')
+                .append('div')
+                .attr('class', 'fixed bg-gray-900 text-white text-sm rounded-lg px-3 py-2 shadow-lg pointer-events-none opacity-0 z-50 max-w-xs')
+                .style('transition', 'opacity 0.2s');
+
+            // Show tooltip on hover
+            node.on('mouseover', function(event, d) {
+                const titleText = d.title ? `<div class="font-semibold mb-1">${d.title}</div>` : '';
+                tooltip
+                    .html(`${titleText}<div class="text-xs text-gray-300 mb-1">Value Driver #${d.id}</div><div class="text-xs">${d.label}</div>`)
+                    .style('opacity', 1)
+                    .style('left', (event.pageX + 10) + 'px')
+                    .style('top', (event.pageY - 10) + 'px');
+            })
+            .on('mousemove', function(event) {
+                tooltip
+                    .style('left', (event.pageX + 10) + 'px')
+                    .style('top', (event.pageY - 10) + 'px');
+            })
+            .on('mouseout', function() {
+                tooltip.style('opacity', 0);
+            });
+
+            // Update positions on tick
+            simulation.on('tick', () => {
+                link
+                    .attr('x1', d => d.source.x)
+                    .attr('y1', d => d.source.y)
+                    .attr('x2', d => d.target.x)
+                    .attr('y2', d => d.target.y);
+
+                linkLabels
+                    .attr('x', d => (d.source.x + d.target.x) / 2)
+                    .attr('y', d => (d.source.y + d.target.y) / 2);
+
+                node
+                    .attr('cx', d => d.x)
+                    .attr('cy', d => d.y);
+
+                nodeLabels
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y);
+            });
+        }
+
+        // Drag behavior
+        function drag(simulation) {
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+
+            return d3.drag()
+                .on('start', dragstarted)
+                .on('drag', dragged)
+                .on('end', dragended);
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (graphData) {
+                renderGraph();
+            }
+        });
+
+        // Initialize
+        loadGraph();
+    </script>
+</body>
+</html>
+
