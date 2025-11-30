@@ -29,6 +29,10 @@
             <div class="p-6 border-b border-gray-200 bg-gradient-to-r from-blue-600 to-blue-700">
                 <h1 class="text-2xl font-bold text-white">Value Drivers</h1>
                 <p class="text-blue-100 text-sm mt-1">Dotwork Impact Analysis</p>
+                <div class="flex gap-4 mt-2">
+                    <a href="capabilities.html" class="text-blue-100 text-xs hover:text-white underline">View Capabilities Directory</a>
+                    <a href="assessment.html" class="text-blue-100 text-xs hover:text-white underline">Show Full Assessment</a>
+                </div>
             </div>
             <div class="flex-1 overflow-y-auto p-4">
                 <div id="valueAreasList" class="space-y-2">
@@ -59,6 +63,8 @@
 
     <script>
         let valueDrivers = [];
+        let capabilities = [];
+        let levels = [];
         let selectedId = null;
 
         // Load JSON data
@@ -66,9 +72,34 @@
             try {
                 const response = await fetch('value_drivers.json');
                 valueDrivers = await response.json();
+                
+                // Load capabilities
+                try {
+                    const capResponse = await fetch('capabilities.json');
+                    capabilities = await capResponse.json();
+                } catch (error) {
+                    console.warn('Could not load capabilities.json:', error);
+                }
+                
+                // Load levels
+                try {
+                    const levelsResponse = await fetch('levels.json');
+                    levels = await levelsResponse.json();
+                } catch (error) {
+                    console.warn('Could not load levels.json:', error);
+                }
+                
                 renderSidebar();
-                // Automatically select value driver #1
-                selectValueArea(1);
+                
+                // Check if there's a hash in the URL to select a specific value area
+                const hash = window.location.hash;
+                if (hash && hash.startsWith('#value-area-')) {
+                    const id = parseInt(hash.replace('#value-area-', ''));
+                    if (id) selectValueArea(id);
+                } else {
+                    // Automatically select value driver #1
+                    selectValueArea(1);
+                }
             } catch (error) {
                 console.error('Error loading data:', error);
                 document.getElementById('valueAreasList').innerHTML = 
@@ -79,7 +110,11 @@
         // Render sidebar with value areas
         function renderSidebar() {
             const listContainer = document.getElementById('valueAreasList');
-            listContainer.innerHTML = valueDrivers.map(driver => `
+            listContainer.innerHTML = valueDrivers.map(driver => {
+                const assessmentKey = `assessment_${driver.id}`;
+                const hasAssessment = localStorage.getItem(assessmentKey) !== null;
+                
+                return `
                 <button 
                     onclick="selectValueArea(${driver.id})"
                     id="btn-${driver.id}"
@@ -87,12 +122,18 @@
                 >
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
-                            <div class="text-xs font-semibold text-blue-600 mb-1">#${driver.id}</div>
+                            <div class="flex items-center gap-2 mb-1">
+                                <div class="text-xs font-semibold text-blue-600">#${driver.id}</div>
+                                ${hasAssessment ? `
+                                    <div class="w-2 h-2 bg-indigo-500 rounded-full" title="Assessment completed"></div>
+                                ` : ''}
+                            </div>
                             <div class="text-sm font-medium text-gray-800 leading-snug">${driver.value_area_description}</div>
                         </div>
                     </div>
                 </button>
-            `).join('');
+            `;
+            }).join('');
         }
 
         // Select and display value area
@@ -100,6 +141,9 @@
             selectedId = id;
             const driver = valueDrivers.find(d => d.id === id);
             if (!driver) return;
+
+            // Update URL hash
+            window.location.hash = `value-area-${id}`;
 
             // Update sidebar active state
             renderSidebar();
@@ -113,65 +157,301 @@
                         <span>></span>
                         <span>Value Area #${driver.id}</span>
                     </div>
-                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
-                        <div class="flex items-start justify-between mb-6">
+                    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 relative">
+                        <!-- Magic Toggle and ROI Assessment -->
+                        <div class="absolute top-6 right-6 flex items-center gap-2">
+                            ${driver.roi_assessment_technique ? `
+                                <button 
+                                    id="roiAssessmentBtn"
+                                    onclick="showROIAssessment(${driver.id})"
+                                    class="p-1.5 text-gray-400 hover:text-green-600 transition-colors duration-200 rounded-md hover:bg-green-50/50 opacity-60 hover:opacity-100"
+                                    title="View ROI Assessment Technique"
+                                >
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                </button>
+                            ` : ''}
+                            <button 
+                                id="magicToggle"
+                                onclick="toggleMagic()"
+                                class="p-1.5 text-gray-400 hover:text-indigo-500 transition-colors duration-200 rounded-md hover:bg-indigo-50/50 opacity-60 hover:opacity-100"
+                                title="Toggle Hypothetical Case Study"
+                            >
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="flex items-start justify-between mb-6 ${driver.roi_assessment_technique ? 'pr-20' : 'pr-12'}">
                             <div class="flex-1">
-                                <div class="text-sm font-semibold text-blue-600 mb-2">Value Area #${driver.id}</div>
-                                <h1 class="text-3xl font-bold text-gray-900 mb-4">${driver.value_area_description}</h1>
+                                <div class="text-xs font-semibold text-blue-600 mb-1.5">Value Area #${driver.id}</div>
+                                <h1 class="text-2xl font-bold text-gray-900 mb-3">${driver.value_area_description}</h1>
                                 ${driver.description ? `
-                                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg mb-6">
-                                        <p class="text-gray-700 leading-relaxed">${driver.description}</p>
+                                    <div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded-r-lg mb-3">
+                                        <p class="text-sm text-gray-700 leading-relaxed">${driver.description}</p>
+                                    </div>
+                                ` : ''}
+                                
+                                <!-- Relevant Capabilities Pills -->
+                                ${driver.capability_relevance && driver.capability_relevance.relevance_scores ? `
+                                    <div class="mb-4">
+                                        ${(() => {
+                                            const scores = driver.capability_relevance.relevance_scores;
+                                            const highRelevance = [];
+                                            for (const [capId, score] of Object.entries(scores)) {
+                                                if (score >= 4) {
+                                                    const cap = capabilities.find(c => c.id === parseInt(capId));
+                                                    if (cap) {
+                                                        highRelevance.push({ id: capId, name: cap.name, score: score });
+                                                    }
+                                                }
+                                            }
+                                            // Sort by score (5s first, then 4s)
+                                            highRelevance.sort((a, b) => b.score - a.score);
+                                            if (highRelevance.length > 0) {
+                                                return `
+                                                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1.5">Related Capabilities</div>
+                                                    <div>
+                                                        ${highRelevance.map(item => `
+                                                            <a href="capabilities.html#capability-${item.id}" class="inline-block px-2 py-1 mr-1.5 mb-1.5 text-xs font-medium rounded-full hover:shadow-sm transition-all ${
+                                                                item.score === 5 
+                                                                    ? 'bg-indigo-100 text-indigo-800 border border-indigo-200 hover:bg-indigo-200' 
+                                                                    : 'bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200'
+                                                            }">
+                                                                ${item.name}
+                                                            </a>
+                                                        `).join('')}
+                                                    </div>
+                                                `;
+                                            }
+                                            return '';
+                                        })()}
                                     </div>
                                 ` : ''}
                             </div>
                         </div>
 
-                        <!-- Two Column Layout: Problem and Solution -->
-                        <div class="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-6">
-                            <!-- Problem Statement Section -->
-                            <div>
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="p-2 bg-red-100 rounded-lg">
-                                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                                        </svg>
+                        <!-- Performance Signals Section -->
+                        ${driver.performance_signals ? `
+                            <div class="mb-6">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                    <!-- Struggling Signals -->
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <div class="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+                                            <h3 class="text-sm font-semibold text-gray-800">Struggling</h3>
+                                        </div>
+                                        <div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                                            <ul class="space-y-1.5">
+                                                ${driver.performance_signals.struggling && Array.isArray(driver.performance_signals.struggling) ? 
+                                                    driver.performance_signals.struggling.map(signal => `
+                                                        <li class="flex items-start gap-2">
+                                                            <svg class="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                            <span class="text-sm text-gray-700 leading-snug">"${signal}"</span>
+                                                        </li>
+                                                    `).join('') : 
+                                                    '<li class="text-sm text-gray-500">No signals available</li>'
+                                                }
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <h2 class="text-xl font-bold text-gray-900">The Problem</h2>
-                                </div>
-                                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg h-full">
-                                    <div class="prose prose-sm max-w-none text-gray-700 leading-relaxed whitespace-pre-line">${driver.story}</div>
+
+                                    <!-- High Performing Signals -->
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <div class="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+                                            <h3 class="text-sm font-semibold text-gray-800">High Performing</h3>
+                                        </div>
+                                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                                            <ul class="space-y-1.5">
+                                                ${driver.performance_signals.high_performing && Array.isArray(driver.performance_signals.high_performing) ? 
+                                                    driver.performance_signals.high_performing.map(signal => `
+                                                        <li class="flex items-start gap-2">
+                                                            <svg class="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                            <span class="text-sm text-gray-700 leading-snug">"${signal}"</span>
+                                                        </li>
+                                                    `).join('') : 
+                                                    '<li class="text-sm text-gray-500">No signals available</li>'
+                                                }
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        ` : ''}
 
-                            <!-- Dotwork Solution Section -->
-                            <div>
-                                <div class="flex items-center gap-3 mb-4">
-                                    <div class="p-2 bg-green-100 rounded-lg">
-                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        <!-- Self-Assessment Section -->
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="p-1.5 bg-amber-100 rounded-lg">
+                                        <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
                                         </svg>
                                     </div>
-                                    <h2 class="text-xl font-bold text-gray-900">How Dotwork Helped</h2>
+                                    <h2 class="text-lg font-bold text-gray-900">Self-Assessment</h2>
                                 </div>
-                                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg h-full">
-                                    ${driver.roi_analysis && Array.isArray(driver.roi_analysis) ? `
-                                        <ul class="space-y-4">
-                                            ${driver.roi_analysis.map((improvement, index) => `
-                                                <li class="flex items-start gap-4">
-                                                    <div class="flex-shrink-0 mt-1">
-                                                        <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                                                            ${index + 1}
+                                <button 
+                                    onclick="clearAssessment(${driver.id})"
+                                    class="text-xs text-gray-500 hover:text-gray-700 underline"
+                                >
+                                    Clear
+                                </button>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-4">
+                                <div class="grid grid-cols-7 gap-1.5">
+                                    ${[1, 2, 3, 4, 5, 6, 7].map(level => {
+                                        const assessmentKey = `assessment_${driver.id}`;
+                                        const currentLevel = localStorage.getItem(assessmentKey);
+                                        const isSelected = currentLevel && parseInt(currentLevel) === level;
+                                        const levelLabels = {
+                                            1: 'Contested / Undefined',
+                                            2: 'Actively Suppressed',
+                                            3: 'Not Realized / Aspirational Only',
+                                            4: 'Weakly Realized (We Know We Should, But…)',
+                                            5: 'Partially Realized / Inconsistent',
+                                            6: 'Mostly Realized but Friction-Filled',
+                                            7: 'Fully Realized & Stable'
+                                        };
+                                        
+                                        const colors = isSelected 
+                                            ? { bg: 'bg-indigo-50', border: 'border-indigo-500', text: 'text-indigo-700' }
+                                            : { bg: 'bg-white', border: 'border-gray-200', text: 'text-gray-600' };
+                                        
+                                        return `
+                                            <button
+                                                onclick="selectAssessment(${driver.id}, ${level})"
+                                                class="p-3 rounded-lg border-2 transition-all duration-200 text-center ${colors.bg} ${colors.border} ${isSelected ? 'shadow-sm' : 'hover:shadow-sm hover:border-gray-300'} ${!isSelected ? 'hover:bg-gray-50' : ''}"
+                                                title="Click to assess"
+                                            >
+                                                <div class="text-xs font-medium ${colors.text}">${levelLabels[level]}</div>
+                                            </button>
+                                        `;
+                                    }).join('')}
+                                </div>
+                                ${(() => {
+                                    const assessmentKey = `assessment_${driver.id}`;
+                                    const noteKey = `assessment_note_${driver.id}`;
+                                    const currentLevel = localStorage.getItem(assessmentKey);
+                                    const currentNote = localStorage.getItem(noteKey);
+                                    
+                                    if (currentLevel) {
+                                        const levelLabels = {
+                                            1: 'Contested / Undefined',
+                                            2: 'Actively Suppressed',
+                                            3: 'Not Realized / Aspirational Only',
+                                            4: 'Weakly Realized (We Know We Should, But…)',
+                                            5: 'Partially Realized / Inconsistent',
+                                            6: 'Mostly Realized but Friction-Filled',
+                                            7: 'Fully Realized & Stable'
+                                        };
+                                        const levelDescriptions = {
+                                            1: 'This area is contested or undefined in our organization. There is disagreement about what it means, how to approach it, or whether it is even relevant. The concept lacks clarity and shared understanding.',
+                                            2: 'This area is actively suppressed in our organization. There are forces, processes, or cultural norms that work against realizing this value area. It may be seen as unnecessary, counterproductive, or threatening to existing ways of working.',
+                                            3: 'This area is not realized and remains aspirational only. We recognize its importance and may have discussed it, but we have not taken meaningful action. It exists as an idea or goal without concrete implementation.',
+                                            4: 'This area is weakly realized. We know we should be doing this, but we struggle to make it happen consistently. There is awareness and some intent, but execution is limited, sporadic, or ineffective.',
+                                            5: 'This area is partially realized but inconsistent. We have some practices or efforts in place, but they are not applied uniformly across teams or contexts. Results vary significantly depending on who is involved or when it is attempted.',
+                                            6: 'This area is mostly realized but friction-filled. We have established practices and see positive outcomes, but there are ongoing challenges, resistance, or inefficiencies that create friction and make it harder than it should be.',
+                                            7: 'This area is fully realized and stable. We have well-established, effective practices that are consistently applied across the organization. It is a natural part of how we work, and we see reliable, positive outcomes with minimal friction.'
+                                        };
+                                        return `
+                                            <div class="mt-3 p-3 bg-indigo-50 border-l-4 border-indigo-500 rounded-r-lg">
+                                                <div class="text-xs font-semibold text-indigo-900 mb-0.5">Current Assessment: ${levelLabels[parseInt(currentLevel)]}</div>
+                                                <div class="text-xs text-indigo-800 mb-2">${levelDescriptions[parseInt(currentLevel)]}</div>
+                                                ${currentNote ? `
+                                                    <div class="mt-2 pt-2 border-t border-indigo-200">
+                                                        <div class="text-xs text-indigo-900 mb-1 font-medium">Note:</div>
+                                                        <div class="text-xs text-indigo-800 whitespace-pre-wrap">${escapeHtml(currentNote)}</div>
+                                                        <button 
+                                                            onclick="editNote(${driver.id})"
+                                                            class="mt-2 text-xs text-indigo-600 hover:text-indigo-800 underline"
+                                                        >
+                                                            [edit]
+                                                        </button>
+                                                    </div>
+                                                ` : `
+                                                    <button 
+                                                        onclick="editNote(${driver.id})"
+                                                        class="mt-2 text-xs text-indigo-600 hover:text-indigo-800 underline"
+                                                    >
+                                                        Add note
+                                                    </button>
+                                                `}
+                                            </div>
+                                        `;
+                                    }
+                                    return '';
+                                })()}
+                            </div>
+                        </div>
+
+                        <!-- Hypothetical Case Study and Outcomes Section -->
+                        <div id="hypotheticalSection" class="mt-8 hidden">
+                            <div class="flex items-center gap-2 mb-5">
+                                <div class="p-1.5 bg-indigo-100 rounded">
+                                    <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                </div>
+                                <h2 class="text-lg font-semibold text-gray-800 tracking-tight">Hypothetical Case Study and Outcomes</h2>
+                            </div>
+                            
+                            <!-- Two Column Layout: Problem and Solution -->
+                            <div class="grid grid-cols-1 lg:grid-cols-[calc(60%-12px)_1px_calc(40%-12px)] gap-6 items-start">
+                                <!-- Problem Statement Section -->
+                                <div class="min-w-0">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <div class="p-1.5 bg-gray-100 rounded">
+                                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-base font-semibold text-gray-800 tracking-tight">The Problem</h3>
+                                    </div>
+                                    <div class="bg-gray-50 border-l-4 border-gray-300 p-5 rounded-r-lg h-full">
+                                        <div class="prose prose-sm max-w-none text-gray-700 leading-relaxed whitespace-pre-line text-sm break-words">${driver.story}</div>
+                                    </div>
+                                </div>
+
+                                <!-- Divider -->
+                                <div class="hidden lg:block bg-gray-300 self-stretch"></div>
+
+                                <!-- Dotwork Solution Section -->
+                                <div class="min-w-0">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <div class="p-1.5 bg-gray-100 rounded">
+                                            <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="text-base font-semibold text-gray-800 tracking-tight">How Dotwork Helped</h3>
+                                    </div>
+                                    <div class="bg-gray-50 border-l-4 border-gray-300 p-5 rounded-r-lg h-full">
+                                        ${driver.roi_analysis && Array.isArray(driver.roi_analysis) ? `
+                                            <ul class="space-y-3">
+                                                ${driver.roi_analysis.map((improvement, index) => `
+                                                    <li class="flex items-start gap-3">
+                                                        <div class="flex-shrink-0 mt-0.5">
+                                                            <div class="w-6 h-6 bg-gray-600 text-white rounded-full flex items-center justify-center font-semibold text-xs">
+                                                                ${index + 1}
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="flex-1">
-                                                        <div class="text-gray-800 leading-relaxed">${improvement}</div>
-                                                    </div>
-                                                </li>
-                                            `).join('')}
-                                        </ul>
-                                    ` : `
-                                        <div class="text-gray-700">${driver.roi_analysis || 'No ROI analysis available'}</div>
-                                    `}
+                                                        <div class="flex-1 min-w-0">
+                                                            <div class="text-gray-800 leading-relaxed text-sm break-words">${improvement}</div>
+                                                        </div>
+                                                    </li>
+                                                `).join('')}
+                                            </ul>
+                                        ` : `
+                                            <div class="text-gray-700 text-sm">${driver.roi_analysis || 'No ROI analysis available'}</div>
+                                        `}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -179,9 +459,416 @@
                 </div>
             `;
 
+            // Reset magic toggle state for new value area
+            magicEnabled = false;
+            const section = document.getElementById('hypotheticalSection');
+            const toggle = document.getElementById('magicToggle');
+            if (section) {
+                section.classList.add('hidden');
+            }
+            if (toggle) {
+                toggle.classList.remove('text-indigo-500');
+                toggle.classList.add('text-gray-400');
+            }
+
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // Magic toggle state
+        let magicEnabled = false;
+
+        // Toggle magic (hypothetical case study)
+        function toggleMagic() {
+            magicEnabled = !magicEnabled;
+            const section = document.getElementById('hypotheticalSection');
+            const toggle = document.getElementById('magicToggle');
+            
+            if (section && toggle) {
+                if (magicEnabled) {
+                    section.classList.remove('hidden');
+                    toggle.classList.add('text-indigo-500');
+                    toggle.classList.remove('text-gray-400');
+                } else {
+                    section.classList.add('hidden');
+                    toggle.classList.remove('text-indigo-500');
+                    toggle.classList.add('text-gray-400');
+                }
+            }
+        }
+
+        // Assessment functions
+        function selectAssessment(valueAreaId, level) {
+            const assessmentKey = `assessment_${valueAreaId}`;
+            localStorage.setItem(assessmentKey, level.toString());
+            
+            // Show modal with description
+            showAssessmentModal(level);
+            
+            // Update sidebar to show indicator
+            renderSidebar();
+            
+            // Reload current value area to update display
+            if (selectedId === valueAreaId) {
+                selectValueArea(valueAreaId);
+            }
+        }
+
+        function clearAssessment(valueAreaId) {
+            const assessmentKey = `assessment_${valueAreaId}`;
+            const noteKey = `assessment_note_${valueAreaId}`;
+            localStorage.removeItem(assessmentKey);
+            localStorage.removeItem(noteKey);
+            
+            // Update sidebar to remove indicator
+            renderSidebar();
+            
+            // Reload current value area to update display
+            if (selectedId === valueAreaId) {
+                selectValueArea(valueAreaId);
+            }
+        }
+
+        function editNote(valueAreaId) {
+            const noteKey = `assessment_note_${valueAreaId}`;
+            const currentNote = localStorage.getItem(noteKey) || '';
+
+            // Remove existing modal if it exists
+            const existingModal = document.getElementById('noteModal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+
+            // Create new modal
+            const modal = document.createElement('div');
+            modal.id = 'noteModal';
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+            modal.style.display = 'flex';
+            
+            const modalContent = document.createElement('div');
+            modalContent.className = 'bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative';
+            modalContent.onclick = (e) => e.stopPropagation();
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.className = 'absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10';
+            closeBtn.onclick = () => closeNoteModal();
+            closeBtn.innerHTML = `
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            `;
+            
+            const title = document.createElement('h3');
+            title.className = 'text-lg font-semibold text-gray-900 mb-4 pr-8';
+            title.textContent = 'Assessment Note';
+            
+            const textarea = document.createElement('textarea');
+            textarea.id = 'noteTextarea';
+            textarea.rows = 6;
+            textarea.className = 'w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none text-gray-900';
+            textarea.placeholder = 'Add your notes about this assessment...';
+            textarea.value = currentNote;
+            
+            const buttonContainer = document.createElement('div');
+            buttonContainer.className = 'flex gap-3 mt-4';
+            
+            const saveBtn = document.createElement('button');
+            saveBtn.className = 'flex-1 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors';
+            saveBtn.textContent = 'Save';
+            saveBtn.onclick = () => saveNote(valueAreaId);
+            
+            const cancelBtn = document.createElement('button');
+            cancelBtn.className = 'px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-gray-700';
+            cancelBtn.textContent = 'Cancel';
+            cancelBtn.onclick = () => closeNoteModal();
+            
+            buttonContainer.appendChild(saveBtn);
+            buttonContainer.appendChild(cancelBtn);
+            
+            modalContent.appendChild(closeBtn);
+            modalContent.appendChild(title);
+            modalContent.appendChild(textarea);
+            modalContent.appendChild(buttonContainer);
+            
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // Focus the textarea
+            setTimeout(() => {
+                textarea.focus();
+                if (textarea.value) {
+                    textarea.setSelectionRange(textarea.value.length, textarea.value.length);
+                }
+            }, 100);
+        }
+
+        function saveNote(valueAreaId) {
+            const textarea = document.getElementById('noteTextarea');
+            if (!textarea) return;
+
+            // Get the raw value and sanitize it (remove HTML tags)
+            const rawValue = textarea.value;
+            const note = sanitizeInput(rawValue);
+            const noteKey = `assessment_note_${valueAreaId}`;
+            
+            if (note.trim()) {
+                localStorage.setItem(noteKey, note);
+            } else {
+                localStorage.removeItem(noteKey);
+            }
+
+            closeNoteModal();
+            
+            // Reload current value area to update display
+            if (selectedId === valueAreaId) {
+                selectValueArea(valueAreaId);
+            }
+        }
+
+        function closeNoteModal() {
+            const modal = document.getElementById('noteModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        function sanitizeInput(text) {
+            // Remove HTML tags and get plain text
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.textContent || div.innerText || '';
+        }
+
+        function escapeHtml(text) {
+            // Escape HTML for safe display in HTML context
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+
+        function showAssessmentModal(level) {
+            // The levels.json has level 1 = fully realized, level 7 = contested
+            // But our UI has level 1 = contested (left), level 7 = fully realized (right)
+            // So we need to reverse: UI level 1 -> JSON level 7, UI level 7 -> JSON level 1
+            const jsonLevel = 8 - level;
+            
+            // Find the level data from the maturity_levels array
+            let levelData = null;
+            if (levels && levels.maturity_levels) {
+                levelData = levels.maturity_levels.find(l => l.level === jsonLevel);
+            } else if (Array.isArray(levels)) {
+                levelData = levels.find(l => l.level === jsonLevel);
+            }
+            
+            if (!levelData) {
+                console.error('Level data not found for UI level:', level, 'JSON level:', jsonLevel);
+                return;
+            }
+
+            // Create modal if it doesn't exist
+            let modal = document.getElementById('assessmentModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'assessmentModal';
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+                modal.innerHTML = `
+                    <div class="bg-white rounded-lg shadow-xl max-w-lg w-full p-6 relative max-h-[90vh] overflow-y-auto">
+                        <button onclick="closeAssessmentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <div id="modalContent"></div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+            }
+
+            // Update modal content
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <div class="mb-6">
+                    <div class="text-2xl font-semibold text-gray-900 mb-4">${levelData.title || ''}</div>
+                </div>
+                <div class="text-gray-700 leading-relaxed mb-6">
+                    ${levelData.description || ''}
+                </div>
+                ${levelData.brightspots ? `
+                    <div class="mb-6">
+                        <h3 class="text-sm font-semibold text-gray-900 mb-2">Brightspots</h3>
+                        <div class="text-gray-700 leading-relaxed text-sm">${levelData.brightspots}</div>
+                    </div>
+                ` : ''}
+                ${levelData.headwinds ? `
+                    <div class="mb-6">
+                        <h3 class="text-sm font-semibold text-gray-900 mb-2">Headwinds</h3>
+                        <div class="text-gray-700 leading-relaxed text-sm">${levelData.headwinds}</div>
+                    </div>
+                ` : ''}
+                <button 
+                    onclick="closeAssessmentModal()"
+                    class="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors"
+                >
+                    Got it
+                </button>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function closeAssessmentModal() {
+            const modal = document.getElementById('assessmentModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // ROI Assessment Technique Modal
+        function showROIAssessment(valueAreaId) {
+            const driver = valueDrivers.find(d => d.id === valueAreaId);
+            if (!driver || !driver.roi_assessment_technique) return;
+
+            const technique = driver.roi_assessment_technique;
+            const sections = technique.sections || [];
+
+            // Create modal if it doesn't exist
+            let modal = document.getElementById('roiAssessmentModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'roiAssessmentModal';
+                modal.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+                modal.onclick = (e) => {
+                    if (e.target === modal) closeROIAssessmentModal();
+                };
+                document.body.appendChild(modal);
+            }
+
+            // Build modal content
+            const modalContent = document.createElement('div');
+            modalContent.className = 'bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative';
+            modalContent.onclick = (e) => e.stopPropagation();
+
+            const header = document.createElement('div');
+            header.className = 'sticky top-0 bg-white border-b border-gray-200 p-6 z-10 relative';
+            header.innerHTML = `
+                <button 
+                    onclick="closeROIAssessmentModal()"
+                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-20"
+                    title="Close"
+                >
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2 pr-10">ROI Assessment Technique</h2>
+                <p class="text-sm text-gray-600">${driver.value_area_description}</p>
+            `;
+
+            const content = document.createElement('div');
+            content.className = 'p-6 space-y-8';
+
+            sections.forEach((section, idx) => {
+                const sectionDiv = document.createElement('div');
+                sectionDiv.className = 'border-b border-gray-200 pb-6 last:border-b-0 last:pb-0';
+                
+                const sectionTitle = document.createElement('h3');
+                sectionTitle.className = 'text-lg font-semibold text-gray-900 mb-2';
+                sectionTitle.textContent = section.title || '';
+
+                const sectionDesc = document.createElement('p');
+                sectionDesc.className = 'text-sm text-gray-600 mb-4';
+                sectionDesc.textContent = section.description || '';
+
+                const itemsList = document.createElement('div');
+                itemsList.className = 'space-y-4';
+
+                if (section.items && Array.isArray(section.items)) {
+                    section.items.forEach((item, itemIdx) => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'bg-gray-50 rounded-lg p-4 border border-gray-200';
+
+                        // Handle different item structures (mechanism/metric/effect)
+                        const itemTitle = item.mechanism || item.metric || item.effect || '';
+                        if (itemTitle) {
+                            const titleEl = document.createElement('div');
+                            titleEl.className = 'font-semibold text-gray-900 mb-2';
+                            titleEl.textContent = itemTitle;
+                            itemDiv.appendChild(titleEl);
+                        }
+
+                        if (item.description) {
+                            const descEl = document.createElement('div');
+                            descEl.className = 'text-sm text-gray-700 mb-2';
+                            descEl.textContent = item.description;
+                            itemDiv.appendChild(descEl);
+                        }
+
+                        if (item.example) {
+                            const exampleEl = document.createElement('div');
+                            exampleEl.className = 'text-sm text-blue-700 bg-blue-50 rounded p-2 mb-2 border-l-2 border-blue-400';
+                            exampleEl.innerHTML = `<span class="font-medium text-blue-900">Example:</span> ${item.example}`;
+                            itemDiv.appendChild(exampleEl);
+                        }
+
+                        const measurement = item.measurement_approach || item.measurement_methodology || '';
+                        if (measurement) {
+                            const measureEl = document.createElement('div');
+                            measureEl.className = 'text-xs text-gray-600 italic mt-2 pt-2 border-t border-gray-300';
+                            measureEl.innerHTML = `<span class="font-medium">Measurement:</span> ${measurement}`;
+                            itemDiv.appendChild(measureEl);
+                        }
+
+                        if (item.expected_magnitude) {
+                            const magnitudeEl = document.createElement('div');
+                            magnitudeEl.className = 'text-xs text-gray-600 mt-1';
+                            magnitudeEl.innerHTML = `<span class="font-medium">Expected:</span> ${item.expected_magnitude}`;
+                            itemDiv.appendChild(magnitudeEl);
+                        }
+
+                        itemsList.appendChild(itemDiv);
+                    });
+                }
+
+                sectionDiv.appendChild(sectionTitle);
+                sectionDiv.appendChild(sectionDesc);
+                sectionDiv.appendChild(itemsList);
+                content.appendChild(sectionDiv);
+            });
+
+            modalContent.appendChild(header);
+            modalContent.appendChild(content);
+            
+            modal.innerHTML = '';
+            modal.appendChild(modalContent);
+            modal.style.display = 'flex';
+        }
+
+        function closeROIAssessmentModal() {
+            const modal = document.getElementById('roiAssessmentModal');
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modals when clicking outside
+        document.addEventListener('click', function(event) {
+            const assessmentModal = document.getElementById('assessmentModal');
+            if (assessmentModal && event.target === assessmentModal) {
+                closeAssessmentModal();
+            }
+            
+            const noteModal = document.getElementById('noteModal');
+            if (noteModal && event.target === noteModal) {
+                closeNoteModal();
+            }
+
+            const roiModal = document.getElementById('roiAssessmentModal');
+            if (roiModal && event.target === roiModal) {
+                closeROIAssessmentModal();
+            }
+        });
 
         // Initialize
         loadData();
