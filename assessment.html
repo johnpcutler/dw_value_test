@@ -52,11 +52,31 @@
     <script>
         let valueDrivers = [];
 
+        // Get base path for GitHub Pages compatibility
+        function getBasePath() {
+            const path = window.location.pathname;
+            const lastSlash = path.lastIndexOf('/');
+            if (lastSlash > 0) {
+                return path.substring(0, lastSlash + 1);
+            }
+            return '/';
+        }
+
+        // Helper function to fetch JSON with proper base path
+        async function fetchJSON(filename) {
+            const basePath = getBasePath();
+            const url = basePath + filename;
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filename}: ${response.status} ${response.statusText}`);
+            }
+            return await response.json();
+        }
+
         // Load JSON data
         async function loadData() {
             try {
-                const response = await fetch('value_drivers.json');
-                valueDrivers = await response.json();
+                valueDrivers = await fetchJSON('value_drivers.json');
                 renderAssessments();
             } catch (error) {
                 console.error('Error loading data:', error);

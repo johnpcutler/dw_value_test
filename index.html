@@ -65,28 +65,55 @@
         let valueDrivers = [];
         let capabilities = [];
         let levels = [];
+        let roiAssessmentTechniques = {}; // Loaded separately to keep main file smaller
         let selectedId = null;
+
+        // Get base path for GitHub Pages compatibility
+        function getBasePath() {
+            // Get the directory of the current HTML file
+            const path = window.location.pathname;
+            const lastSlash = path.lastIndexOf('/');
+            if (lastSlash > 0) {
+                return path.substring(0, lastSlash + 1);
+            }
+            return '/';
+        }
+
+        // Helper function to fetch JSON with proper base path
+        async function fetchJSON(filename) {
+            const basePath = getBasePath();
+            const url = basePath + filename;
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Failed to load ${filename}: ${response.status} ${response.statusText}`);
+            }
+            return await response.json();
+        }
 
         // Load JSON data
         async function loadData() {
             try {
-                const response = await fetch('value_drivers.json');
-                valueDrivers = await response.json();
+                valueDrivers = await fetchJSON('value_drivers.json');
                 
                 // Load capabilities
                 try {
-                    const capResponse = await fetch('capabilities.json');
-                    capabilities = await capResponse.json();
+                    capabilities = await fetchJSON('capabilities.json');
                 } catch (error) {
                     console.warn('Could not load capabilities.json:', error);
                 }
                 
                 // Load levels
                 try {
-                    const levelsResponse = await fetch('levels.json');
-                    levels = await levelsResponse.json();
+                    levels = await fetchJSON('levels.json');
                 } catch (error) {
                     console.warn('Could not load levels.json:', error);
+                }
+                
+                // Load ROI assessment techniques (separate file to keep main file smaller)
+                try {
+                    roiAssessmentTechniques = await fetchJSON('roi_assessment_techniques.json');
+                } catch (error) {
+                    console.warn('Could not load roi_assessment_techniques.json:', error);
                 }
                 
                 renderSidebar();
@@ -160,7 +187,7 @@
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 relative">
                         <!-- Magic Toggle and ROI Assessment -->
                         <div class="absolute top-6 right-6 flex items-center gap-2">
-                            ${driver.roi_assessment_technique ? `
+                            ${roiAssessmentTechniques[driver.id] ? `
                                 <button 
                                     id="roiAssessmentBtn"
                                     onclick="showROIAssessment(${driver.id})"
@@ -184,7 +211,7 @@
                             </button>
                         </div>
                         
-                        <div class="flex items-start justify-between mb-6 ${driver.roi_assessment_technique ? 'pr-20' : 'pr-12'}">
+                        <div class="flex items-start justify-between mb-6 ${roiAssessmentTechniques[driver.id] ? 'pr-20' : 'pr-12'}">
                             <div class="flex-1">
                                 <div class="text-xs font-semibold text-blue-600 mb-1.5">Value Area #${driver.id}</div>
                                 <h1 class="text-2xl font-bold text-gray-900 mb-3">${driver.value_area_description}</h1>
@@ -728,9 +755,11 @@
         // ROI Assessment Technique Modal
         function showROIAssessment(valueAreaId) {
             const driver = valueDrivers.find(d => d.id === valueAreaId);
-            if (!driver || !driver.roi_assessment_technique) return;
+            if (!driver) return;
+            
+            const technique = roiAssessmentTechniques[valueAreaId];
+            if (!technique) return;
 
-            const technique = driver.roi_assessment_technique;
             const sections = technique.sections || [];
 
             // Create modal if it doesn't exist

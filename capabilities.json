@@ -1,0 +1,153 @@
+[
+  {
+    "id": 1,
+    "name": "Strategy Development",
+    "description": "Understanding where the organization is going and why."
+  },
+  {
+    "id": 2,
+    "name": "Goal & OKR Alignment",
+    "description": "Connecting strategy to clear goals, outcomes, and success measures."
+  },
+  {
+    "id": 3,
+    "name": "Prioritization & Trade-off Making",
+    "description": "Deciding what matters most and what to pause or stop."
+  },
+  {
+    "id": 4,
+    "name": "Roadmapping & Planning",
+    "description": "Laying out what's coming next and how work will sequence over time."
+  },
+  {
+    "id": 5,
+    "name": "Strategic Portfolio Management",
+    "description": "Choosing and balancing major bets, initiatives, and investments."
+  },
+  {
+    "id": 6,
+    "name": "Resource & Capacity Planning",
+    "description": "Allocating people, teams, and budget to the work."
+  },
+  {
+    "id": 7,
+    "name": "Scenario & What-If Modeling",
+    "description": "Exploring options and tradeoffs before committing."
+  },
+  {
+    "id": 8,
+    "name": "Planning Cycle Support",
+    "description": "Coordinating annual, quarterly, and continuous planning rhythms."
+  },
+  {
+    "id": 9,
+    "name": "Budgeting & Financial Stewardship",
+    "description": "Managing costs and aligning investment with value."
+  },
+  {
+    "id": 10,
+    "name": "Capitalization",
+    "description": "Determining which work can be capitalized and ensuring correct accounting treatment."
+  },
+  {
+    "id": 11,
+    "name": "P&L Calculation & Rollups",
+    "description": "Understanding revenue, cost, and profit impacts at team, product, or portfolio levels."
+  },
+  {
+    "id": 12,
+    "name": "Financial Reporting",
+    "description": "Providing clear financial visibility to leaders and teams."
+  },
+  {
+    "id": 13,
+    "name": "ROI Calculation & Investment Evaluation",
+    "description": "Assessing expected returns and comparing investment options."
+  },
+  {
+    "id": 14,
+    "name": "Outcome Tracking & Impact Measurement",
+    "description": "Measuring whether the work made the desired difference."
+  },
+  {
+    "id": 15,
+    "name": "Customer & Market Insight",
+    "description": "Collecting and synthesizing customer signals and market understanding."
+  },
+  {
+    "id": 16,
+    "name": "Product Discovery",
+    "description": "Learning what customers need and validating assumptions."
+  },
+  {
+    "id": 17,
+    "name": "Experimentation & Validation",
+    "description": "Testing ideas and reducing uncertainty before scaling."
+  },
+  {
+    "id": 18,
+    "name": "Cross-Functional Collaboration",
+    "description": "Helping teams align and work together across functions."
+  },
+  {
+    "id": 19,
+    "name": "Execution Coordination",
+    "description": "Managing dependencies, milestones, reviews, and ongoing delivery flow."
+  },
+  {
+    "id": 20,
+    "name": "Change Management",
+    "description": "Helping the organization adopt new practices, tools, and direction shifts."
+  },
+  {
+    "id": 21,
+    "name": "Team Health & Effectiveness",
+    "description": "Keeping teams aligned, sustainable, and functioning well."
+  },
+  {
+    "id": 22,
+    "name": "Technical Excellence & Quality",
+    "description": "Improving engineering practices, velocity, and code quality."
+  },
+  {
+    "id": 23,
+    "name": "Risk Management",
+    "description": "Identifying and addressing risks early."
+  },
+  {
+    "id": 24,
+    "name": "Data-Informed Decision Making",
+    "description": "Using analytics and evidence to guide choices."
+  },
+  {
+    "id": 25,
+    "name": "Documentation & Knowledge Management",
+    "description": "Capturing and sharing information so teams can find and use it."
+  },
+  {
+    "id": 26,
+    "name": "Onboarding & Training",
+    "description": "Supporting new hires and building skills across the org."
+  },
+  {
+    "id": 27,
+    "name": "Tooling & Vendor Management",
+    "description": "Selecting and managing tools and external providers."
+  },
+  {
+    "id": 28,
+    "name": "Communication & Stakeholder Alignment",
+    "description": "Ensuring shared context and expectations across leadership and teams."
+  },
+  {
+    "id": 29,
+    "name": "Launch & Commercialization Readiness",
+    "description": "Preparing for customer rollout, adoption, and internal enablement."
+  },
+  {
+    "id": 30,
+    "name": "Organizational Design",
+    "description": "Structuring teams, roles, and workflows to support the work."
+  }
+]
+

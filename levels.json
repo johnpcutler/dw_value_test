@@ -1,0 +1,54 @@
+{
+    "maturity_levels": [
+      {
+        "level": 1,
+        "title": "Behavior is happening consistently, predictably, and reliably",
+        "description": "The behavior has become a ritual or embedded system: it happens the same way every time, reinforced by strong norms, clear ownership, and predictable outputs. Change feels risky because the pattern is so familiar, and while some pain might exist, it doesn’t threaten the ritual itself.",
+        "brightspots": "Because norms, ownership, and routines are strong, the behavior is stable and dependable. People know what to expect, coordination is straightforward, and the predictability lowers cognitive load. Even when conditions shift, the practice tends to hold together.",
+        "headwinds": "The stability that makes the behavior reliable also makes it harder to evolve. Change feels disruptive or risky, and existing pain tends to persist because the ritual protects itself. Improvements require overcoming inertia rather than simply solving a problem."
+      },
+      {
+        "level": 2,
+        "title": "Behavior consistently happens, but the environment makes it painful",
+        "description": "The behavior consistently happens, but the environment makes it harder than it needs to be. People rely on legacy systems, manual effort, and various workarounds to keep it going. It gets done reliably, but the experience is more effortful than smooth.",
+        "brightspots": "The core strength here is dependability. People care enough to push through friction and still produce the expected outcomes. Despite the tools and constraints, the organization has built discipline and follow-through.",
+        "headwinds": "The surrounding systems drain energy, slow down cycles, and make the behavior susceptible to burnout. Because people compensate individually, improvements stall, and attention gets pulled toward managing workarounds instead of refining the behavior."
+      },
+      {
+        "level": 3,
+        "title": "Behavior happens, but unevenly",
+        "description": "The behavior is present, but practiced differently across teams. Variation itself isn’t the issue — the problem is that the interfaces between these local approaches don’t work well. Conflicting interpretations, uneven capability, and a lack of a common frame create friction, resulting in local optimizations rather than something that holds together across teams.",
+        "brightspots": "Teams have found approaches that fit their local context, which can lead to useful experimentation and flexibility. Some pockets may be strong, showing what good can look like without mandating uniformity.",
+        "headwinds": "Because shared interfaces don’t function well, coordination suffers, misunderstandings accumulate, and cross-team expectations are unclear. Local successes don’t easily translate into system-wide improvement, and the overall experience lacks coherence."
+      },
+      {
+        "level": 4,
+        "title": "Everyone agrees it matters, but it keeps getting displaced",
+        "description": "People believe the behavior is important, and it’s not a knowledge or commitment problem. But it repeatedly loses to urgency, fire drills, and resource scarcity. This creates a growing backlog of “shoulds,” along with a sense of guilt that it never gets the attention it deserves.",
+        "brightspots": "There is genuine alignment on the value of the behavior. Motivation exists, people understand its purpose, and no one needs convincing that it matters. When it does happen in small windows, it tends to be done thoughtfully.",
+        "headwinds": "The environment constantly overrides intention, pushing the behavior to the bottom of the stack. Competing priorities, distractions, and recurring emergencies make it nearly impossible to give it sustained attention, reinforcing a cycle of guilt and delay."
+      },
+      {
+        "level": 5,
+        "title": "The behavior is desired or politically valuable, but not practiced",
+        "description": "The behavior appears in leadership vision statements, cultural aspirations, and branding or identity language. There are small symbolic attempts, but no real habit infrastructure to support it. It is valued rhetorically, yet absent in practice.",
+        "brightspots": "There is aspirational energy to build from. The behavior carries political and cultural weight, which means the organization is open to it in principle and would celebrate progress if it started to take hold.",
+        "headwinds": "Because the behavior is mostly symbolic, people overestimate how much of it actually exists. Without routines, norms, or support structures, it can’t gain traction, and the gap between aspiration and reality grows quietly over time."
+      },
+      {
+        "level": 6,
+        "title": "Forces are actively preventing the behavior",
+        "description": "The behavior is not happening, and explicit or implicit forces suppress it. Attempting it carries political risk, can trigger turf protection or 'don’t step on toes' reactions, and runs into misaligned incentives where reward systems punish the behavior. Cultural norms work against it, eventually producing learned helplessness.",
+        "brightspots": "Brightspots typically appear in individuals or small groups who still believe in the behavior’s value and test it carefully. These pockets can reveal what’s possible in a healthier environment and show the underlying potential.",
+        "headwinds": "Systemic forces — political, cultural, structural, and incentive-driven — block the behavior from taking root. People learn to avoid it, opt out to protect themselves, or disengage entirely. Even strong intent gets neutralized by the surrounding dynamics."
+      },
+      {
+        "level": 7,
+        "title": "People cannot agree on what the behavior even is",
+        "description": "There is no shared definition of the behavior itself. The ambiguity is fundamental — not about how to do it, but what it means. Competing framings persist, and there is no shared language. People use the same words but mean different things, meetings derail into definition debates, cognitive load spikes, and alignment is impossible because the underlying concept is unstable.",
+        "brightspots": "Active debate indicates curiosity and a desire for clarity. People are engaged enough to care about the meaning, which can be a useful foundation once a shared definition begins to form.",
+        "headwinds": "Because there is no shared conceptual anchor, habits or systems cannot form. Every conversation risks turning into a definitional debate, and misalignment becomes the default state, preventing any behavioral maturity from developing."
+      }
+    ]
+  }
+  
