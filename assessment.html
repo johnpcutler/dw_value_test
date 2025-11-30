@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Assessment - Dotwork Impact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-3xl font-bold mb-2">Full Assessment</h1>
+                        <p class="text-blue-100">Complete overview of all value area assessments</p>
+                    </div>
+                    <a href="index.html" class="text-blue-100 hover:text-white underline text-sm">Back to Value Drivers</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto p-8">
+            <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                <div id="assessmentContent">
+                    <div class="text-center py-20">
+                        <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+                        <p class="mt-2 text-gray-500">Loading assessments...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let valueDrivers = [];
+
+        // Load JSON data
+        async function loadData() {
+            try {
+                const response = await fetch('value_drivers.json');
+                valueDrivers = await response.json();
+                renderAssessments();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('assessmentContent').innerHTML = 
+                    '<div class="text-red-500 p-4">Error loading data. Please ensure value_drivers.json is in the same directory.</div>';
+            }
+        }
+
+        function renderAssessments() {
+            const container = document.getElementById('assessmentContent');
+            
+            if (valueDrivers.length === 0) {
+                container.innerHTML = '<div class="text-center text-gray-500 py-12">No value areas found.</div>';
+                return;
+            }
+
+            const levelLabels = {
+                1: 'Contested / Undefined',
+                2: 'Actively Suppressed',
+                3: 'Not Realized / Aspirational Only',
+                4: 'Weakly Realized (We Know We Should, But…)',
+                5: 'Partially Realized / Inconsistent',
+                6: 'Mostly Realized but Friction-Filled',
+                7: 'Fully Realized & Stable'
+            };
+
+            container.innerHTML = `
+                <table class="w-full">
+                    <thead class="bg-gray-50 border-b border-gray-200">
+                        <tr>
+                            <th class="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider w-1/4">Value Area</th>
+                            <th class="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider w-1/5">Assessment</th>
+                            <th class="px-3 py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Note</th>
+                            <th class="px-3 py-3 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider w-24">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        ${valueDrivers.map((driver, index) => {
+                            const assessmentKey = `assessment_${driver.id}`;
+                            const noteKey = `assessment_note_${driver.id}`;
+                            const currentLevel = localStorage.getItem(assessmentKey);
+                            const currentNote = localStorage.getItem(noteKey);
+                            
+                            const assessmentLabel = currentLevel ? levelLabels[parseInt(currentLevel)] : 'Not assessed';
+                            const assessmentColor = currentLevel 
+                                ? parseInt(currentLevel) >= 5 
+                                    ? 'text-indigo-600' 
+                                    : parseInt(currentLevel) >= 3 
+                                        ? 'text-gray-600' 
+                                        : 'text-red-600'
+                                : 'text-gray-400';
+                            
+                            return `
+                                <tr class="hover:bg-gray-50 transition-colors">
+                                    <td class="px-3 py-3">
+                                        <a href="index.html#value-area-${driver.id}" class="group">
+                                            <div class="text-xs font-semibold text-blue-600 group-hover:text-blue-800 group-hover:underline">
+                                                #${driver.id}
+                                            </div>
+                                            <div class="text-xs text-gray-900 mt-0.5 leading-snug">${driver.value_area_description}</div>
+                                        </a>
+                                    </td>
+                                    <td class="px-3 py-3">
+                                        ${currentLevel ? `
+                                            <div class="flex items-center gap-2 flex-wrap">
+                                                <span class="px-2 py-0.5 text-xs font-medium rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">
+                                                    ${parseInt(currentLevel)}
+                                                </span>
+                                                <span class="text-xs font-medium ${assessmentColor} leading-tight">${assessmentLabel}</span>
+                                            </div>
+                                        ` : `
+                                            <span class="text-xs text-gray-400">Not assessed</span>
+                                        `}
+                                    </td>
+                                    <td class="px-3 py-3">
+                                        ${currentNote ? `
+                                            <div class="text-xs text-gray-700 whitespace-pre-wrap max-w-2xl">${escapeHtml(currentNote)}</div>
+                                        ` : `
+                                            <span class="text-xs text-gray-400">—</span>
+                                        `}
+                                    </td>
+                                    <td class="px-3 py-3 text-right">
+                                        <a 
+                                            href="index.html#value-area-${driver.id}"
+                                            class="inline-block px-2 py-1 text-xs font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded transition-colors"
+                                        >
+                                            View →
+                                        </a>
+                                    </td>
+                                </tr>
+                            `;
+                        }).join('')}
+                    </tbody>
+                </table>
+            `;
+        }
+
+        function escapeHtml(text) {
+            if (!text) return '';
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Initialize
+        loadData();
+    </script>
+</body>
+</html>
+
